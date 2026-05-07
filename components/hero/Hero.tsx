@@ -6,7 +6,10 @@ import dynamic from "next/dynamic";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-const Scene = dynamic(() => import("./Scene").then((m) => m.Scene), { ssr: false });
+const HeroBackdrop = dynamic(
+  () => import("./HeroBackdrop").then((m) => m.HeroBackdrop),
+  { ssr: false },
+);
 
 const reveal = {
   initial: { opacity: 0, y: 12 },
@@ -23,7 +26,7 @@ export function Hero() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full items-center overflow-hidden pt-14"
     >
-      <Scene />
+      <HeroBackdrop />
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-7 px-5 pb-24 pt-8 sm:px-8 sm:pt-16 lg:px-12">
         <motion.div
