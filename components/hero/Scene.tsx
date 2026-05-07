@@ -4,9 +4,9 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
-const ACCENT = new THREE.Color("#8B5CF6");
-const ACCENT_LIGHT = new THREE.Color("#A78BFA");
-const BLUE = new THREE.Color("#60A5FA");
+const ACCENT = new THREE.Color("#7C3AED");
+const ACCENT_LIGHT = new THREE.Color("#8B5CF6");
+const BLUE = new THREE.Color("#3B82F6");
 
 type Pulse = {
   edgeIndex: number;
@@ -74,7 +74,7 @@ function NeuralCloud({
       new THREE.LineBasicMaterial({
         color: new THREE.Color("#7C3AED"),
         transparent: true,
-        opacity: 0.28,
+        opacity: 0.22,
       }),
     [],
   );
@@ -92,7 +92,7 @@ function NeuralCloud({
     const mat = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
       uniforms: {},
       vertexShader: `
         attribute float alpha;
@@ -285,7 +285,7 @@ function NeuralCloud({
     <group ref={groupRef}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
         <sphereGeometry args={[1, 12, 12]} />
-        <meshBasicMaterial color={ACCENT_LIGHT} />
+        <meshBasicMaterial color={ACCENT} />
       </instancedMesh>
       <lineSegments ref={linesRef} geometry={lineGeo} material={lineMat} />
       <points ref={pulsesRef} geometry={pulseGeo} material={pulseMat} />
@@ -353,7 +353,7 @@ export function Scene() {
     return (
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_40%,rgba(139,92,246,0.18),transparent_60%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_40%,rgba(139,92,246,0.12),transparent_65%)]"
       />
     );
   }
@@ -370,7 +370,7 @@ export function Scene() {
       >
         <NeuralCloud count={count} connectRadius={radius} clickRef={clickRef} />
       </Canvas>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_30%,rgba(8,8,15,0.85)_75%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_28%,rgba(255,255,255,0.78)_72%,rgba(255,255,255,1)_100%)]" />
     </div>
   );
 }
