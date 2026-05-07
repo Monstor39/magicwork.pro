@@ -35,6 +35,7 @@ export function Header() {
     { id: "case", label: t("cases") },
     { id: "process", label: t("process") },
     { id: "team", label: t("team") },
+    { id: "faq", label: t("faq") },
     { id: "contact", label: t("contact") },
   ];
 
@@ -53,7 +54,7 @@ export function Header() {
             <a
               key={l.id}
               href={`#${l.id}`}
-              className="relative text-[13px] text-text-muted transition-colors hover:text-text after:absolute after:inset-x-0 after:-bottom-1.5 after:h-[2px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100"
+              className="relative text-[13px] text-text transition-colors hover:text-accent after:absolute after:inset-x-0 after:-bottom-1.5 after:h-[2px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
               {l.label}
             </a>

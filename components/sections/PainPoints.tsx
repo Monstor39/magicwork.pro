@@ -52,7 +52,7 @@ export function PainPoints() {
 
       <motion.p
         {...reveal(0.2)}
-        className="mt-10 max-w-2xl rounded-xl border border-accent/30 bg-accent/8 p-6 text-[16px] leading-relaxed text-text"
+        className="mt-10 max-w-2xl rounded-xl border border-accent/30 bg-accent/10 p-6 text-[16px] leading-relaxed text-text"
       >
         {t("answer")}
       </motion.p>

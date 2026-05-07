@@ -34,7 +34,7 @@ export function Hero() {
           className="flex flex-wrap items-center gap-3"
         >
           <Eyebrow>{t("eyebrow")}</Eyebrow>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/8 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
             <Sparkles className="h-3 w-3" />
             {t("tagIndividual")}
           </span>
@@ -58,7 +58,7 @@ export function Hero() {
             />
           </span>
           <br />
-          <span className="text-text/80">{t("headlinePart2")}</span>
+          <span className="text-text-muted">{t("headlinePart2")}</span>
         </motion.h1>
 
         <motion.p

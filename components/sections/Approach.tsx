@@ -32,7 +32,6 @@ export function Approach() {
           <Eyebrow>{t("eyebrow")}</Eyebrow>
           <h2 className="text-balance text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-[44px]">
             {t("title")}
-            <span className="ml-1 align-text-top text-accent">.</span>
           </h2>
           <p className="max-w-md text-[15px] leading-relaxed text-text-muted">{t("lead")}</p>
 

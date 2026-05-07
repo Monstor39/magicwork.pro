@@ -58,7 +58,7 @@ export function Team() {
                   className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_140deg,#6D28D9,#8B5CF6,#2563EB,#6D28D9)] opacity-90"
                 />
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white">
-                  <span className="bg-gradient-to-br from-accent to-blue bg-clip-text font-display text-[20px] font-semibold italic tracking-tight text-transparent">
+                  <span className="bg-gradient-to-br from-accent to-blue bg-clip-text font-display text-[20px] font-semibold tracking-tight text-transparent">
                     {m.initials}
                   </span>
                 </div>

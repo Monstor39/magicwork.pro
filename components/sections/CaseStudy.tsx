@@ -79,7 +79,7 @@ export function CaseStudy() {
         whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease }}
-        className="relative mt-6 overflow-hidden rounded-3xl border border-border bg-white p-7 elev-card sm:p-10"
+        className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-white p-7 elev-card sm:rounded-3xl sm:p-10"
       >
         <div
           aria-hidden
@@ -91,7 +91,7 @@ export function CaseStudy() {
         />
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+          className="pointer-events-none absolute inset-x-7 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent sm:inset-x-10"
         />
 
         <div className="relative flex flex-col gap-7">
@@ -118,9 +118,9 @@ export function CaseStudy() {
               >
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-accent/8 blur-2xl transition-opacity group-hover:opacity-100"
+                  className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-accent/10 blur-2xl transition-opacity group-hover:opacity-100"
                 />
-                <div className="relative font-display text-[40px] font-semibold leading-none tracking-tight text-text italic sm:text-[48px]">
+                <div className="relative font-display text-[40px] font-semibold leading-[1.15] tracking-tight text-text italic sm:text-[48px]">
                   <CountValue raw={m.value} animate={!reduced && inView} />
                 </div>
                 <div className="relative mt-3 text-[12.5px] leading-snug text-text-muted">
@@ -144,7 +144,7 @@ export function CaseStudy() {
               whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease }}
-              className="rounded-2xl border border-border bg-white p-6 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover"
+              className="rounded-2xl border border-border bg-white p-6 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover sm:p-7"
             >
               <h4 className="text-[15px] font-semibold tracking-tight text-text">{item.title}</h4>
               <p className="mt-2 text-[13px] leading-relaxed text-text-muted">{item.body}</p>

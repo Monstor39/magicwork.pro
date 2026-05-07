@@ -5,6 +5,7 @@
     "cases": "Cases",
     "process": "Process",
     "team": "Team",
+    "faq": "FAQ",
     "contact": "Contact",
     "cta": "Get in touch"
   },
@@ -71,7 +72,7 @@
     "title": "We automate knowledge work",
     "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The hard part isn't \"how\" — it's \"what's actually worth automating\". That's where we come in.",
     "selectorTitle": "Pick your niche",
-    "selectorHint": "We'll show what to automate first",
+    "selectorHint": "We'll show what's worth automating first",
     "individualNote": "The exact set and stack are tailored to your processes — these are just typical scenarios",
     "niches": [
       {
@@ -194,7 +195,7 @@
   "team": {
     "eyebrow": "Team",
     "title": "Two of us — both build",
-    "body": "We moved to Dubai to bring real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — whoever talks to you in the meeting is the one who writes the code and ships it. We run every project personally, from the first call to release.",
+    "body": "We moved to Dubai to deliver real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release.",
     "members": [
       {
         "initials": "DG",

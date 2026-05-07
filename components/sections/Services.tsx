@@ -126,7 +126,7 @@ export function Services() {
                   ))}
                 </ul>
 
-                <div className="flex items-start gap-2.5 rounded-lg border border-accent/30 bg-accent/8 p-3.5">
+                <div className="flex items-start gap-2.5 rounded-lg border border-accent/30 bg-accent/10 p-3.5">
                   <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
                   <p className="text-[12.5px] leading-relaxed text-text">
                     {t("individualNote")}

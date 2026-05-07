@@ -38,7 +38,7 @@ export function Process() {
           <motion.li
             key={i}
             {...reveal(i * 0.08)}
-            className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-white p-6 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover"
+            className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-white p-6 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover sm:p-7"
           >
             <div className="flex items-center gap-3">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-accent/40 bg-accent/10 font-mono text-[13px] font-semibold text-accent">

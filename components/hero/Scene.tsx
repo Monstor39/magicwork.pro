@@ -435,7 +435,7 @@ export function Scene() {
         <NeuralCloud count={count} connectRadius={radius} clickRef={clickRef} />
       </Canvas>
       {/* hard wash on the left half so the headline never collides with the graph */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 right-1/3 bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0.95)_42%,rgba(255,255,255,0.55)_72%,transparent_100%)]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 right-1/2 sm:right-1/3 bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0.95)_42%,rgba(255,255,255,0.55)_72%,transparent_100%)]" />
       {/* soft global vignette to keep periphery clean */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_45%,transparent_22%,rgba(255,255,255,0.45)_62%,rgba(255,255,255,0.9)_92%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />

@@ -35,7 +35,9 @@ export function Footer() {
               {tc("alternatives.email")}
             </a>
           </div>
-          <LangSwitch />
+          <div className="self-start sm:self-auto">
+            <LangSwitch />
+          </div>
         </div>
         <div className="flex flex-col gap-2 border-t border-border pt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-text-subtle sm:flex-row sm:items-center sm:justify-between">
           <span>© {year} MagicWork</span>
