@@ -44,3 +44,8 @@ next-env.d.ts
 dev.log
 .claude/
 
+# local screenshots (user shares pasted images via image*.png in repo root)
+/image.png
+/image*.png
+/image copy*.png
+
