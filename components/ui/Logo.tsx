@@ -5,18 +5,18 @@ export function Logo({ className = "" }: { className?: string }) {
     <Link
       href="/"
       className={`group inline-flex items-center gap-2.5 font-sans text-[16px] font-semibold tracking-tight text-text outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-md ${className}`}
-      aria-label="MagicWork"
+      aria-label="MagicWork.AI"
     >
       <LogoMark />
-      <span className="inline-flex items-baseline gap-1.5">
-        <span
-          className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] leading-none bg-[linear-gradient(110deg,#6D28D9_0%,#8B5CF6_25%,#A78BFA_45%,#60A5FA_65%,#2563EB_85%,#6D28D9_100%)] bg-[length:200%_100%] bg-clip-text text-transparent [animation:shimmer_3.6s_linear_infinite] motion-reduce:animation-none"
-          aria-hidden
-        >
-          AI
-        </span>
+      <span className="inline-flex items-baseline">
         <span>
           Magic<span className="text-accent">Work</span>
+        </span>
+        <span className="mx-[1px] text-accent">.</span>
+        <span
+          className="font-mono text-[15px] font-bold uppercase tracking-[0.04em] leading-none bg-[linear-gradient(110deg,#6D28D9_0%,#8B5CF6_22%,#A78BFA_42%,#60A5FA_62%,#2563EB_82%,#6D28D9_100%)] bg-[length:200%_100%] bg-clip-text text-transparent [animation:shimmer_3.6s_linear_infinite] motion-reduce:[animation:none]"
+        >
+          AI
         </span>
       </span>
     </Link>
@@ -25,7 +25,7 @@ export function Logo({ className = "" }: { className?: string }) {
 
 export function LogoMark({ size = 30 }: { size?: number }) {
   const id = "mw-logo-grad";
-  const idCore = "mw-logo-core";
+  const idGlow = "mw-logo-glow";
   return (
     <span
       className="relative inline-flex shrink-0 items-center justify-center"
@@ -36,114 +36,75 @@ export function LogoMark({ size = 30 }: { size?: number }) {
         <defs>
           <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#8B5CF6" />
+            <stop offset="55%" stopColor="#6D28D9" />
             <stop offset="100%" stopColor="#2563EB" />
           </linearGradient>
-          <radialGradient id={idCore} cx="50%" cy="50%" r="50%">
+          <linearGradient id={idGlow} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#A78BFA" stopOpacity="1" />
-            <stop offset="60%" stopColor="#6D28D9" stopOpacity="1" />
-            <stop offset="100%" stopColor="#2563EB" stopOpacity="0.85" />
-          </radialGradient>
+            <stop offset="100%" stopColor="#2563EB" stopOpacity="1" />
+          </linearGradient>
         </defs>
 
-        <g
-          stroke={`url(#${id})`}
-          strokeWidth="1.4"
-          strokeLinecap="round"
+        {/* briefcase handle */}
+        <rect
+          x="11"
+          y="6"
+          width="10"
+          height="4"
+          rx="1.6"
           fill="none"
-          opacity="0.4"
-        >
-          <line x1="6" y1="10" x2="16" y2="16" />
-          <line x1="6" y1="22" x2="16" y2="16" />
-          <line x1="16" y1="16" x2="26" y2="10" />
-          <line x1="16" y1="16" x2="26" y2="22" />
-        </g>
-
-        <g
           stroke={`url(#${id})`}
-          strokeWidth="2"
-          strokeLinecap="round"
+          strokeWidth="1.6"
+        />
+
+        {/* briefcase body */}
+        <rect
+          x="4"
+          y="10"
+          width="24"
+          height="17"
+          rx="2.6"
+          fill={`url(#${id})`}
+        />
+        {/* inner highlight (top edge) */}
+        <rect
+          x="4"
+          y="10"
+          width="24"
+          height="17"
+          rx="2.6"
           fill="none"
-          strokeDasharray="6 18"
-          opacity="0"
-          className="transition-opacity duration-300 group-hover:opacity-100"
-        >
-          <line
-            x1="6"
-            y1="10"
-            x2="16"
-            y2="16"
-            pathLength={24}
-            style={{
-              animationName: "logo-pulse-1",
-              animationDuration: "1.6s",
-              animationIterationCount: "infinite",
-              animationTimingFunction: "linear",
-            }}
-          />
-          <line
-            x1="6"
-            y1="22"
-            x2="16"
-            y2="16"
-            pathLength={24}
-            style={{
-              animationName: "logo-pulse-2",
-              animationDuration: "1.6s",
-              animationDelay: "0.4s",
-              animationIterationCount: "infinite",
-              animationTimingFunction: "linear",
-            }}
-          />
-          <line
-            x1="16"
-            y1="16"
-            x2="26"
-            y2="10"
-            pathLength={24}
-            style={{
-              animationName: "logo-pulse-3",
-              animationDuration: "1.6s",
-              animationDelay: "0.8s",
-              animationIterationCount: "infinite",
-              animationTimingFunction: "linear",
-            }}
-          />
-          <line
-            x1="16"
-            y1="16"
-            x2="26"
-            y2="22"
-            pathLength={24}
-            style={{
-              animationName: "logo-pulse-4",
-              animationDuration: "1.6s",
-              animationDelay: "1.2s",
-              animationIterationCount: "infinite",
-              animationTimingFunction: "linear",
-            }}
-          />
-        </g>
+          stroke="rgba(255,255,255,0.35)"
+          strokeWidth="0.6"
+        />
 
-        <circle cx="6" cy="10" r="2" fill={`url(#${id})`} />
-        <circle cx="6" cy="22" r="2" fill={`url(#${id})`} />
-        <circle cx="26" cy="10" r="2" fill={`url(#${id})`} />
-        <circle cx="26" cy="22" r="2" fill={`url(#${id})`} />
+        {/* central divider line (briefcase clasp) */}
+        <line
+          x1="4"
+          y1="16.5"
+          x2="28"
+          y2="16.5"
+          stroke="rgba(255,255,255,0.45)"
+          strokeWidth="0.8"
+          strokeLinecap="round"
+        />
 
-        <circle cx="16" cy="16" r="4.5" fill={`url(#${idCore})`} opacity="0.18" />
+        {/* AI core node — pulsing spark in the centre (hint of intelligence) */}
         <circle
           cx="16"
-          cy="16"
-          r="3.2"
-          fill={`url(#${idCore})`}
+          cy="16.5"
+          r="2"
+          fill="white"
           style={{
-            transformOrigin: "16px 16px",
+            transformOrigin: "16px 16.5px",
             transformBox: "fill-box",
             animationName: "logo-core-pulse",
-            animationDuration: "2.6s",
+            animationDuration: "2.4s",
             animationIterationCount: "infinite",
             animationTimingFunction: "ease-in-out",
           }}
         />
+        <circle cx="16" cy="16.5" r="0.9" fill={`url(#${idGlow})`} />
       </svg>
     </span>
   );

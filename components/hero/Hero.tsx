@@ -45,20 +45,20 @@ export function Hero() {
           animate="animate"
           variants={reveal}
           transition={{ duration: 0.7, delay: 0.1, ease }}
-          className="max-w-3xl text-balance font-sans text-[40px] font-semibold leading-[1.05] tracking-tight sm:text-[58px] lg:text-[72px]"
+          className="max-w-3xl text-balance font-sans text-[40px] font-semibold leading-[1.12] tracking-tight sm:text-[58px] sm:leading-[1.08] lg:text-[72px] lg:leading-[1.06]"
         >
           <span className="text-text">{t("headlinePart1")}</span>{" "}
-          <span className="relative inline-block text-accent">
-            <span className="relative z-10 bg-gradient-to-r from-accent-deep via-accent to-blue bg-clip-text font-display italic text-transparent">
+          <span className="relative inline-block">
+            <span className="relative z-10 bg-gradient-to-r from-accent-deep via-accent to-blue bg-clip-text text-transparent">
               {t("headlineAccent")}
             </span>
             <span
               aria-hidden
-              className="absolute inset-x-0 bottom-1 z-0 h-[0.18em] bg-accent/15"
+              className="absolute inset-x-0 bottom-[0.05em] z-0 h-[0.14em] bg-accent/15"
             />
           </span>
           <br />
-          <span className="text-text/75">{t("headlinePart2")}</span>
+          <span className="text-text/80">{t("headlinePart2")}</span>
         </motion.h1>
 
         <motion.p
