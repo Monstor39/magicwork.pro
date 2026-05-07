@@ -15,11 +15,22 @@ type Pulse = {
   color: THREE.Color;
 };
 
-function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: number }) {
+type ClickRef = { x: number; y: number; time: number } | null;
+
+function NeuralCloud({
+  count,
+  connectRadius,
+  clickRef,
+}: {
+  count: number;
+  connectRadius: number;
+  clickRef: React.RefObject<ClickRef>;
+}) {
   const meshRef = useRef<THREE.InstancedMesh>(null!);
   const linesRef = useRef<THREE.LineSegments>(null!);
   const pulsesRef = useRef<THREE.Points>(null!);
   const groupRef = useRef<THREE.Group>(null!);
+  const ringRef = useRef<THREE.Mesh>(null!);
   const { mouse, viewport } = useThree();
 
   const nodes = useMemo(() => {
@@ -63,7 +74,7 @@ function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: n
       new THREE.LineBasicMaterial({
         color: new THREE.Color("#7C3AED"),
         transparent: true,
-        opacity: 0.18,
+        opacity: 0.28,
       }),
     [],
   );
@@ -110,6 +121,17 @@ function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: n
     return mat;
   }, []);
 
+  const ringMat = useMemo(
+    () =>
+      new THREE.MeshBasicMaterial({
+        color: ACCENT_LIGHT,
+        transparent: true,
+        opacity: 0,
+        side: THREE.DoubleSide,
+      }),
+    [],
+  );
+
   const pulsesState = useRef<Pulse[]>([]);
   const lastSpawnRef = useRef(0);
 
@@ -131,22 +153,65 @@ function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: n
     if (groupRef.current) {
       groupRef.current.rotation.y = t * 0.05;
       groupRef.current.rotation.x = Math.sin(t * 0.07) * 0.18;
-      const tx = (mouse.x * viewport.width) / 16;
-      const ty = (mouse.y * viewport.height) / 16;
+      const tx = (mouse.x * viewport.width) / 32;
+      const ty = (mouse.y * viewport.height) / 32;
       groupRef.current.position.x += (tx - groupRef.current.position.x) * 0.04;
       groupRef.current.position.y += (ty - groupRef.current.position.y) * 0.04;
     }
 
+    const mouseWorldX = (mouse.x * viewport.width) / 2;
+    const mouseWorldY = (mouse.y * viewport.height) / 2;
+    const click = clickRef.current;
+    const clickAge = click ? t - click.time : Infinity;
+    const clickActive = clickAge < 1.2;
+
+    if (ringRef.current) {
+      if (clickActive && click) {
+        ringRef.current.position.set(click.x, click.y, 0);
+        const k = Math.min(1, clickAge / 1.2);
+        const scale = 0.4 + k * 4.2;
+        ringRef.current.scale.setScalar(scale);
+        ringMat.opacity = (1 - k) * 0.55;
+      } else {
+        ringMat.opacity = 0;
+      }
+    }
+
     const dummy = new THREE.Object3D();
     const positions = new Float32Array(nodes.length * 3);
+    const ATTRACT_RADIUS = 3.2;
+    const ATTRACT_RADIUS_SQ = ATTRACT_RADIUS * ATTRACT_RADIUS;
+
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       const wobble = 0.18;
-      const x = n.base.x + Math.sin(t * n.speed + n.phase) * wobble;
-      const y = n.base.y + Math.cos(t * n.speed * 0.9 + n.phase) * wobble;
+      let x = n.base.x + Math.sin(t * n.speed + n.phase) * wobble;
+      let y = n.base.y + Math.cos(t * n.speed * 0.9 + n.phase) * wobble;
       const z = n.base.z + Math.sin(t * n.speed * 0.7 + n.phase) * wobble;
+
+      const dx = mouseWorldX - x;
+      const dy = mouseWorldY - y;
+      const dSq = dx * dx + dy * dy;
+      let scale = 0.045 + 0.012 * Math.sin(t * 1.2 + n.phase);
+
+      if (dSq < ATTRACT_RADIUS_SQ) {
+        const fall = 1 - dSq / ATTRACT_RADIUS_SQ;
+        const force = fall * 0.55;
+        x += dx * force * 0.18;
+        y += dy * force * 0.18;
+        scale += fall * 0.04;
+      }
+
+      if (clickActive && click) {
+        const cdx = click.x - x;
+        const cdy = click.y - y;
+        const cd = Math.hypot(cdx, cdy);
+        const wave = Math.max(0, 1 - Math.abs(cd - clickAge * 4) / 1.4);
+        scale += wave * 0.06 * (1 - clickAge / 1.2);
+      }
+
       dummy.position.set(x, y, z);
-      dummy.scale.setScalar(0.045 + 0.012 * Math.sin(t * 1.2 + n.phase));
+      dummy.scale.setScalar(scale);
       dummy.updateMatrix();
       meshRef.current.setMatrixAt(i, dummy.matrix);
       positions[i * 3] = x;
@@ -168,7 +233,8 @@ function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: n
     }
     linePos.needsUpdate = true;
 
-    if (t - lastSpawnRef.current > 0.18 && pulsesState.current.length < 50 && edges.length > 0) {
+    const spawnInterval = clickActive ? 0.05 : 0.18;
+    if (t - lastSpawnRef.current > spawnInterval && pulsesState.current.length < 50 && edges.length > 0) {
       lastSpawnRef.current = t;
       const palette = [ACCENT, ACCENT_LIGHT, BLUE];
       pulsesState.current.push({
@@ -223,6 +289,9 @@ function NeuralCloud({ count, connectRadius }: { count: number; connectRadius: n
       </instancedMesh>
       <lineSegments ref={linesRef} geometry={lineGeo} material={lineMat} />
       <points ref={pulsesRef} geometry={pulseGeo} material={pulseMat} />
+      <mesh ref={ringRef} material={ringMat}>
+        <ringGeometry args={[0.45, 0.6, 48]} />
+      </mesh>
     </group>
   );
 }
@@ -231,6 +300,7 @@ export function Scene() {
   const [mounted, setMounted] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const clickRef = useRef<ClickRef>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -246,6 +316,35 @@ export function Scene() {
       reduceQ.removeEventListener("change", onR);
       mobileQ.removeEventListener("change", onM);
     };
+  }, []);
+
+  useEffect(() => {
+    const onDown = (e: PointerEvent) => {
+      const heroEl = document.getElementById("top");
+      if (!heroEl) return;
+      const rect = heroEl.getBoundingClientRect();
+      if (
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom ||
+        e.clientX < rect.left ||
+        e.clientX > rect.right
+      )
+        return;
+      const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ny = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+      const fov = 50;
+      const distance = 11;
+      const aspect = rect.width / rect.height;
+      const heightAtZ0 = 2 * Math.tan((fov * Math.PI) / 360) * distance;
+      const widthAtZ0 = heightAtZ0 * aspect;
+      clickRef.current = {
+        x: nx * (widthAtZ0 / 2),
+        y: ny * (heightAtZ0 / 2),
+        time: performance.now() / 1000,
+      };
+    };
+    window.addEventListener("pointerdown", onDown, { passive: true });
+    return () => window.removeEventListener("pointerdown", onDown);
   }, []);
 
   if (!mounted) return null;
@@ -269,7 +368,7 @@ export function Scene() {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 11], fov: 50 }}
       >
-        <NeuralCloud count={count} connectRadius={radius} />
+        <NeuralCloud count={count} connectRadius={radius} clickRef={clickRef} />
       </Canvas>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_30%,rgba(8,8,15,0.85)_75%)]" />
     </div>

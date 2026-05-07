@@ -60,6 +60,32 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes logo-node-glow {
+  0%, 100% { r: 2.4; opacity: 1; }
+  50% { r: 3.2; opacity: 0.7; }
+}
+
+@keyframes logo-pulse-1 {
+  0% { stroke-dashoffset: 24; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes logo-pulse-2 {
+  0% { stroke-dashoffset: 24; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes logo-pulse-3 {
+  0% { stroke-dashoffset: 24; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

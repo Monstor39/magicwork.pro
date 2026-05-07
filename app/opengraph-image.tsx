@@ -27,8 +27,7 @@ export default function OpengraphImage() {
               width: 56,
               height: 56,
               borderRadius: 14,
-              background:
-                "linear-gradient(135deg, #8B5CF6 0%, #60A5FA 100%)",
+              background: "linear-gradient(135deg, #8B5CF6 0%, #60A5FA 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -39,26 +38,29 @@ export default function OpengraphImage() {
           >
             M
           </div>
-          <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>
-            Magic<span style={{ color: "#A78BFA" }}>Work</span>
+          <div style={{ display: "flex", fontSize: 28, fontWeight: 600, letterSpacing: -0.5 }}>
+            <span>Magic</span>
+            <span style={{ color: "#A78BFA" }}>Work</span>
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
             style={{
+              display: "flex",
+              flexWrap: "wrap",
               fontSize: 76,
               fontWeight: 700,
               letterSpacing: -2,
               lineHeight: 1.05,
-              maxWidth: 1000,
+              maxWidth: 1040,
+              gap: 20,
             }}
           >
-            Автоматизируем{" "}
+            <span>Автоматизируем</span>
             <span
               style={{
-                background:
-                  "linear-gradient(90deg, #A78BFA 0%, #60A5FA 100%)",
+                background: "linear-gradient(90deg, #A78BFA 0%, #60A5FA 100%)",
                 backgroundClip: "text",
                 color: "transparent",
               }}

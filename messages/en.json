@@ -1,6 +1,6 @@
 {
   "nav": {
-    "services": "Services",
+    "services": "What we do",
     "cases": "Cases",
     "process": "Process",
     "team": "Team",
@@ -12,68 +12,122 @@
     "headlinePart1": "We automate",
     "headlineAccent": "business processes",
     "headlinePart2": "so they run without you in the room",
-    "subhead": "AI agents, chatbots, integrations, CRM and custom builds. A two-person team out of Dubai — turnkey delivery, ROI shown on your numbers after the first audit.",
+    "subhead": "AI agents, chatbots, integrations, CRM and custom builds. We dig into the business, map the processes — and tell you what's worth automating and what isn't.",
     "primaryCta": "Start a project",
-    "secondaryCta": "See case studies",
-    "trustLine": "Document workflow · Government client · −90% time · in production",
+    "secondaryCta": "See the case",
+    "trustLine": "Document workflow · city administration · −90% time · in production",
     "spotsOpen": "2 slots open this month"
   },
   "pain": {
-    "eyebrow": "Problems",
+    "eyebrow": "Pains",
     "title": "Sound familiar?",
     "items": [
       {
-        "title": "Manual work eats hours",
-        "body": "Your team copies data between systems, fills out reports, pastes from Excel into the CRM. Dozens of hours a week on work a machine should do."
+        "title": "Days lost to copy-paste",
+        "body": "Your team moves data between systems by hand, fills out reports, types the same thing into three places. Hours that should have been decisions."
       },
       {
-        "title": "Leads are lost without a reply",
-        "body": "An inquiry lands at night or on a weekend — the customer is already with a competitor. Without instant response, conversion collapses on leads you paid for."
+        "title": "Lead arrives at 10pm — gone by 10:05",
+        "body": "Without instant response, conversion collapses. You pay for traffic, reply next day — and lose the money twice."
       },
       {
-        "title": "Systems don't talk to each other",
-        "body": "CRM, inventory, accounting, marketing — each in its own corner. Any report is assembled by hand, errors compound, the team's view of reality drifts."
+        "title": "Four systems, four versions of the truth",
+        "body": "CRM, inventory, accounting, marketing — each with its own numbers. Every report is assembled by hand, errors compound, the team argues instead of working."
       },
       {
-        "title": "Headcount doesn't scale",
-        "body": "Business grows — payroll grows in the same proportion. Hiring, onboarding, churn. Without automation every new dollar of revenue costs almost as much as the old one."
+        "title": "Revenue grows — payroll grows in lockstep",
+        "body": "Without automation each new dollar of revenue costs almost as much as the old. Hiring, training, churn. The business scales only on your nerves."
       }
     ],
-    "answer": "We dig into the business and tell you honestly: where to automate fully, where partially, and where you shouldn't bother. No fluff, no upsell."
+    "answer": "We come in, map the processes and tell you straight: automate fully, automate partially, or don't bother. No fluff, no upsell."
   },
   "services": {
     "eyebrow": "What we do",
-    "title": "Four directions",
-    "items": [
+    "title": "We automate knowledge work",
+    "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The tech in 2026 makes it fast and cheap. The hard part isn't \"how\", it's \"what's actually worth automating in your business\". That's where we come in.",
+    "selectorTitle": "Pick your niche",
+    "selectorHint": "We'll show what to automate first in it",
+    "niches": [
       {
-        "title": "AI agents & chatbots",
-        "body": "Bots on Telegram, WhatsApp and the web: chat with customers, qualify leads, take requests, write into CRM and spreadsheets."
+        "id": "horeca",
+        "label": "Restaurant · HoReCa",
+        "summary": "Orders, bookings, supplies and analytics — no managers on the phone.",
+        "items": [
+          "Order intake on WhatsApp/Telegram with auto-write into POS",
+          "Table reservations with confirmations and reminders",
+          "Auto-reports on revenue, average check and bestselling items",
+          "Stock control, auto-purchase orders to suppliers, demand forecast"
+        ]
       },
       {
-        "title": "System integrations",
-        "body": "n8n, Make, Zapier and custom API integrations. We wire CRM, inventory, accounting, messengers and marketing — data flows on its own."
+        "id": "ecom",
+        "label": "E-commerce · shop",
+        "summary": "Listings, support and inventory running themselves 24/7.",
+        "items": [
+          "AI consultant on site: helps pick the product and closes the sale",
+          "Auto-generated product cards, descriptions and SEO across the catalog",
+          "Sync inventory ↔ marketplaces ↔ CRM in real time",
+          "Behavior-triggered emails and abandoned cart recovery"
+        ]
       },
       {
-        "title": "CRM & sales pipelines",
-        "body": "amoCRM, Bitrix24, HubSpot setup. Pipelines, automated tasks, manager dashboards, reports to Telegram or email."
+        "id": "agency",
+        "label": "Agency · services",
+        "summary": "Lead gen, qualification and client onboarding on autopilot.",
+        "items": [
+          "AI-qualified inbound: bot finds out budget and scope itself",
+          "Auto-generated proposals and contracts from CRM templates",
+          "Client reports: metrics, screenshots, status — weekly, hands-off",
+          "Employee onboarding: checklists, access, training in a Telegram bot"
+        ]
       },
       {
-        "title": "Custom development",
-        "body": "Web apps, parsers, scripts, customer portals, complex pipelines — wherever off-the-shelf tools fall short."
+        "id": "manufacturing",
+        "label": "Manufacturing",
+        "summary": "Documents, requests, QC and plan-vs-actual without paper.",
+        "items": [
+          "Material and purchase requests: routing, approvals, deadlines",
+          "Digital document workflow: incoming, outgoing, executor tracking",
+          "Shop floor dashboards: plan-vs-actual, downtime, root causes — live",
+          "Photo-based QC with AI: defects caught on the line"
+        ]
+      },
+      {
+        "id": "realestate",
+        "label": "Real estate",
+        "summary": "Leads, viewings and deals — faster than the competing agent.",
+        "items": [
+          "AI bot on listings: qualifies leads and books a viewing in 30 sec",
+          "Auto-matching properties to client requests across all sources",
+          "Pipeline reminders and follow-ups: nothing falls through the cracks",
+          "One-click property decks and deal document packs"
+        ]
+      },
+      {
+        "id": "b2b",
+        "label": "B2B · services · SaaS",
+        "summary": "Funnel, billing, support and onboarding on a conveyor.",
+        "items": [
+          "AI sales agent: qualifies, books demos, drafts proposals",
+          "Billing + CRM + support stitched into a single client record",
+          "Auto-onboarding for new clients: emails, access, training flows",
+          "Support conversation analysis: what breaks, what's missing in the product"
+        ]
       }
-    ]
+    ],
+    "ctaHint": "Don't see your niche? Describe the task — we'll figure it out."
   },
   "case": {
-    "eyebrow": "Flagship case",
-    "client": "City Administration",
-    "title": "Document workflow automation",
-    "body": "We delivered a full incoming/outgoing document handling system: routing, approvals, deadline control, executor notifications. Fully in production, running stable.",
+    "eyebrow": "Case",
+    "title": "Digital document workflow for a city administration",
+    "lede": "We delivered a full incoming/outgoing document handling system: routing, approvals, deadline control, executor notifications. In production from month one.",
+    "statusBadge": "In production",
     "metrics": [
       { "value": "−90%", "label": "time per document" },
       { "value": "3 mo.", "label": "from kickoff to full launch" },
-      { "value": "100%", "label": "in production" }
+      { "value": "8 mo.", "label": "running stable in production" }
     ],
-    "alsoBuiltTitle": "We also built",
+    "alsoBuiltTitle": "Also worked on",
     "alsoBuilt": [
       {
         "title": "Marketing websites",
@@ -114,7 +168,7 @@
   "team": {
     "eyebrow": "Team",
     "title": "Two of us — both hands-on",
-    "body": "Originally from Kaliningrad, now based in Dubai. We moved here for networking with local business and new projects. No middlemen: whoever sells is the one who builds.",
+    "body": "We moved to Dubai to bring real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — whoever talks to you in the meeting is the one who writes the code and ships it.",
     "members": [
       {
         "initials": "DG",
@@ -150,7 +204,7 @@
       },
       {
         "q": "Which industries do you work with?",
-        "a": "Public sector, services, e-commerce, agencies, SaaS. We take a project on if we see automation will actually pay back — otherwise we'll say no ourselves."
+        "a": "Public sector, services, e-commerce, agencies, SaaS, manufacturing, real estate. We take a project on if we see automation will actually pay back — otherwise we'll say no ourselves."
       },
       {
         "q": "Do I need a long-term contract?",
