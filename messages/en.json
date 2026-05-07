@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "services": "Services",
+    "cases": "Cases",
+    "process": "Process",
+    "team": "Team",
+    "contact": "Contact",
+    "cta": "Get in touch"
+  },
+  "hero": {
+    "eyebrow": "Magic · Work · Pro",
+    "headlinePart1": "We automate",
+    "headlineAccent": "business processes",
+    "headlinePart2": "so they run without you in the room",
+    "subhead": "AI agents, chatbots, integrations, CRM and custom builds. A two-person team out of Dubai — turnkey delivery, ROI shown on your numbers after the first audit.",
+    "primaryCta": "Start a project",
+    "secondaryCta": "See case studies",
+    "trustLine": "Document workflow · Government client · −90% time · in production",
+    "spotsOpen": "2 slots open this month"
+  },
+  "pain": {
+    "eyebrow": "Problems",
+    "title": "Sound familiar?",
+    "items": [
+      {
+        "title": "Manual work eats hours",
+        "body": "Your team copies data between systems, fills out reports, pastes from Excel into the CRM. Dozens of hours a week on work a machine should do."
+      },
+      {
+        "title": "Leads are lost without a reply",
+        "body": "An inquiry lands at night or on a weekend — the customer is already with a competitor. Without instant response, conversion collapses on leads you paid for."
+      },
+      {
+        "title": "Systems don't talk to each other",
+        "body": "CRM, inventory, accounting, marketing — each in its own corner. Any report is assembled by hand, errors compound, the team's view of reality drifts."
+      },
+      {
+        "title": "Headcount doesn't scale",
+        "body": "Business grows — payroll grows in the same proportion. Hiring, onboarding, churn. Without automation every new dollar of revenue costs almost as much as the old one."
+      }
+    ],
+    "answer": "We dig into the business and tell you honestly: where to automate fully, where partially, and where you shouldn't bother. No fluff, no upsell."
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Four directions",
+    "items": [
+      {
+        "title": "AI agents & chatbots",
+        "body": "Bots on Telegram, WhatsApp and the web: chat with customers, qualify leads, take requests, write into CRM and spreadsheets."
+      },
+      {
+        "title": "System integrations",
+        "body": "n8n, Make, Zapier and custom API integrations. We wire CRM, inventory, accounting, messengers and marketing — data flows on its own."
+      },
+      {
+        "title": "CRM & sales pipelines",
+        "body": "amoCRM, Bitrix24, HubSpot setup. Pipelines, automated tasks, manager dashboards, reports to Telegram or email."
+      },
+      {
+        "title": "Custom development",
+        "body": "Web apps, parsers, scripts, customer portals, complex pipelines — wherever off-the-shelf tools fall short."
+      }
+    ]
+  },
+  "case": {
+    "eyebrow": "Flagship case",
+    "client": "City Administration",
+    "title": "Document workflow automation",
+    "body": "We delivered a full incoming/outgoing document handling system: routing, approvals, deadline control, executor notifications. Fully in production, running stable.",
+    "metrics": [
+      { "value": "−90%", "label": "time per document" },
+      { "value": "3 mo.", "label": "from kickoff to full launch" },
+      { "value": "100%", "label": "in production" }
+    ],
+    "alsoBuiltTitle": "We also built",
+    "alsoBuilt": [
+      {
+        "title": "Marketing websites",
+        "body": "Landing pages and corporate sites with form-to-CRM and messenger integrations baked in."
+      },
+      {
+        "title": "Telegram bots",
+        "body": "Bots that talk to customers, collect data, write into CRM and sheets — for services, bookings and support."
+      },
+      {
+        "title": "Turnkey integrations",
+        "body": "n8n / Make scenarios linking CRM, inventory, payments and notifications — zero manual steps."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "Four steps — no surprises",
+    "steps": [
+      {
+        "title": "Discovery & audit",
+        "body": "We get on a call, look at the business, and produce a process map plus the spots where automation actually pays off."
+      },
+      {
+        "title": "Prototype",
+        "body": "We build a minimal working version on your real data. You see the impact before signing the bigger scope."
+      },
+      {
+        "title": "Rollout",
+        "body": "We scale the prototype, integrate with existing systems, train the team, and document everything."
+      },
+      {
+        "title": "Support",
+        "body": "We monitor stability, adjust to process changes, and add new scenarios on demand."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Team",
+    "title": "Two of us — both hands-on",
+    "body": "Originally from Kaliningrad, now based in Dubai. We moved here for networking with local business and new projects. No middlemen: whoever sells is the one who builds.",
+    "members": [
+      {
+        "initials": "DG",
+        "name": "Danila Golod",
+        "role": "Founder · Automation Lead"
+      },
+      {
+        "initials": "MV",
+        "name": "Mikhail Vasilyevich",
+        "role": "Co-founder · Engineering"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Common questions",
+    "items": [
+      {
+        "q": "How much does it cost?",
+        "a": "Depends on scope. After the audit we name a range in EUR / AED for a specific scope. You pay either fixed or per milestone."
+      },
+      {
+        "q": "What about data security?",
+        "a": "By default client data never leaves their infrastructure. AI models and integrations are deployed inside your perimeter when policy requires it."
+      },
+      {
+        "q": "How fast can you launch?",
+        "a": "A simple bot — 1–2 weeks. Integrations — 2–4 weeks. Document-workflow-grade automation — 2–3 months to full rollout."
+      },
+      {
+        "q": "What if something breaks?",
+        "a": "Support is included. Same business-day response, critical incidents prioritized. Every scenario is monitored."
+      },
+      {
+        "q": "Which industries do you work with?",
+        "a": "Public sector, services, e-commerce, agencies, SaaS. We take a project on if we see automation will actually pay back — otherwise we'll say no ourselves."
+      },
+      {
+        "q": "Do I need a long-term contract?",
+        "a": "No. We can work on a single project or a monthly support retainer. No minimum commitment."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Tell us about the task",
+    "subtitle": "Fill out the form or message us directly. We'll get back at a time that works for you.",
+    "fields": {
+      "name": "Name",
+      "business": "Company / project",
+      "pain": "What you'd like to automate",
+      "contact": "Telegram, email or phone",
+      "time": "Best time to reach you"
+    },
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "success": "Got it. We'll get back to you shortly.",
+    "error": "Something went wrong. Message us on Telegram instead.",
+    "alternativesTitle": "Or directly",
+    "alternatives": {
+      "telegram": "@Magicworkpro",
+      "email": "golodbizai@gmail.com"
+    }
+  },
+  "footer": {
+    "tagline": "Business process automation · Dubai",
+    "rights": "All rights reserved"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN"
+  },
+  "meta": {
+    "title": "MagicWork — business process automation",
+    "description": "AI agents, chatbots, integrations, CRM and custom development. A team based in Dubai. Document workflow, lead capture, ops — turnkey.",
+    "ogTitle": "MagicWork · Business process automation",
+    "ogDescription": "AI, integrations, CRM, custom dev. Case: −90% time on document workflow for a city administration."
+  }
+}
