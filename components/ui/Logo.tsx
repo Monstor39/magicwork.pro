@@ -4,20 +4,19 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-2.5 font-sans text-[15px] font-semibold tracking-tight text-text outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-md ${className}`}
+      className={`group inline-flex items-center gap-2.5 font-sans text-[16px] font-semibold tracking-tight text-text outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-md ${className}`}
       aria-label="MagicWork"
     >
       <LogoMark />
-      <span className="inline-flex items-baseline">
-        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent leading-none mr-1.5 hidden sm:inline">
+      <span className="inline-flex items-baseline gap-1.5">
+        <span
+          className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] leading-none bg-[linear-gradient(110deg,#6D28D9_0%,#8B5CF6_25%,#A78BFA_45%,#60A5FA_65%,#2563EB_85%,#6D28D9_100%)] bg-[length:200%_100%] bg-clip-text text-transparent [animation:shimmer_3.6s_linear_infinite] motion-reduce:animation-none"
+          aria-hidden
+        >
           AI
         </span>
         <span>
           Magic<span className="text-accent">Work</span>
-          <span
-            aria-hidden
-            className="ml-[2px] inline-block h-[1em] w-[2px] translate-y-[2px] bg-accent align-middle [animation:blink-caret_1.1s_steps(1)_infinite]"
-          />
         </span>
       </span>
     </Link>
@@ -46,7 +45,6 @@ export function LogoMark({ size = 30 }: { size?: number }) {
           </radialGradient>
         </defs>
 
-        {/* подложка-граф (всегда видна) */}
         <g
           stroke={`url(#${id})`}
           strokeWidth="1.4"
@@ -60,7 +58,6 @@ export function LogoMark({ size = 30 }: { size?: number }) {
           <line x1="16" y1="16" x2="26" y2="22" />
         </g>
 
-        {/* пульсы по рёбрам — только при hover группы */}
         <g
           stroke={`url(#${id})`}
           strokeWidth="2"
@@ -127,13 +124,11 @@ export function LogoMark({ size = 30 }: { size?: number }) {
           />
         </g>
 
-        {/* периферийные ноды */}
         <circle cx="6" cy="10" r="2" fill={`url(#${id})`} />
         <circle cx="6" cy="22" r="2" fill={`url(#${id})`} />
         <circle cx="26" cy="10" r="2" fill={`url(#${id})`} />
         <circle cx="26" cy="22" r="2" fill={`url(#${id})`} />
 
-        {/* центральная "agent" нода */}
         <circle cx="16" cy="16" r="4.5" fill={`url(#${idCore})`} opacity="0.18" />
         <circle
           cx="16"

@@ -191,10 +191,12 @@ function NeuralCloud({
     if (groupRef.current) {
       groupRef.current.rotation.y = t * 0.05;
       groupRef.current.rotation.x = Math.sin(t * 0.07) * 0.18;
-      const tx = (mouse.x * viewport.width) / 32;
-      const ty = (mouse.y * viewport.height) / 32;
-      groupRef.current.position.x += (tx - groupRef.current.position.x) * 0.04;
-      groupRef.current.position.y += (ty - groupRef.current.position.y) * 0.04;
+      // anchor scene to the right side so it doesn't fight with the headline copy on the left
+      const baseX = viewport.width * 0.18;
+      const tx = baseX + (mouse.x * viewport.width) / 40;
+      const ty = (mouse.y * viewport.height) / 40;
+      groupRef.current.position.x += (tx - groupRef.current.position.x) * 0.05;
+      groupRef.current.position.y += (ty - groupRef.current.position.y) * 0.05;
     }
 
     const mouseWorldX = (mouse.x * viewport.width) / 2;
@@ -329,20 +331,23 @@ function NeuralCloud({
   });
 
   return (
-    <group ref={groupRef}>
-      <instancedMesh ref={haloRef} args={[undefined, undefined, count]} material={haloMat}>
-        <sphereGeometry args={[1, 10, 10]} />
-      </instancedMesh>
-      <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-        <sphereGeometry args={[1, 14, 14]} />
-        <meshBasicMaterial color={ACCENT} />
-      </instancedMesh>
-      <lineSegments ref={linesRef} geometry={lineGeo} material={lineMat} />
-      <points ref={pulsesRef} geometry={pulseGeo} material={pulseMat} />
+    <>
+      <group ref={groupRef}>
+        <instancedMesh ref={haloRef} args={[undefined, undefined, count]} material={haloMat}>
+          <sphereGeometry args={[1, 10, 10]} />
+        </instancedMesh>
+        <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
+          <sphereGeometry args={[1, 14, 14]} />
+          <meshBasicMaterial color={ACCENT} />
+        </instancedMesh>
+        <lineSegments ref={linesRef} geometry={lineGeo} material={lineMat} />
+        <points ref={pulsesRef} geometry={pulseGeo} material={pulseMat} />
+      </group>
+      {/* click ring lives outside the rotating group so it always faces camera (no edge-on "stick") */}
       <mesh ref={ringRef} material={ringMat}>
         <ringGeometry args={[0.45, 0.6, 48]} />
       </mesh>
-    </group>
+    </>
   );
 }
 
@@ -429,8 +434,11 @@ export function Scene() {
       >
         <NeuralCloud count={count} connectRadius={radius} clickRef={clickRef} />
       </Canvas>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_45%,transparent_18%,rgba(255,255,255,0.55)_60%,rgba(255,255,255,0.95)_92%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
+      {/* hard wash on the left half so the headline never collides with the graph */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 right-1/3 bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0.95)_42%,rgba(255,255,255,0.55)_72%,transparent_100%)]" />
+      {/* soft global vignette to keep periphery clean */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_45%,transparent_22%,rgba(255,255,255,0.45)_62%,rgba(255,255,255,0.9)_92%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
     </div>
   );
 }

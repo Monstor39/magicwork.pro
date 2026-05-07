@@ -58,7 +58,7 @@ export function Hero() {
             />
           </span>
           <br />
-          <span className="text-text-muted">{t("headlinePart2")}</span>
+          <span className="text-text/75">{t("headlinePart2")}</span>
         </motion.h1>
 
         <motion.p
