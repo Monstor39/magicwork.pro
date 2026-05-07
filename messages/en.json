@@ -1,6 +1,7 @@
 {
   "nav": {
     "services": "What we do",
+    "approach": "Approach",
     "cases": "Cases",
     "process": "Process",
     "team": "Team",
@@ -12,11 +13,12 @@
     "headlinePart1": "We automate",
     "headlineAccent": "business processes",
     "headlinePart2": "so they run without you in the room",
-    "subhead": "AI agents, chatbots, integrations, CRM and custom builds. We dig into the business, map the processes — and tell you what's worth automating and what isn't.",
+    "subhead": "We dig into the business, map the processes — and build the solution around your operating logic. Not boxed software. AI agents, chatbots, integrations, CRM and custom builds.",
     "primaryCta": "Start a project",
     "secondaryCta": "See the case",
     "trustLine": "Document workflow · city administration · −90% time · in production",
-    "spotsOpen": "2 slots open this month"
+    "spotsOpen": "2 slots open this month",
+    "tagIndividual": "Tailored to every business"
   },
   "pain": {
     "eyebrow": "Pains",
@@ -41,12 +43,36 @@
     ],
     "answer": "We come in, map the processes and tell you straight: automate fully, automate partially, or don't bother. No fluff, no upsell."
   },
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "We don't sell boxes",
+    "lead": "Every business is unique. So is the solution that fits it. We don't repackage SaaS, we don't bend your processes around someone else's template. We build around your operating logic — otherwise the automation simply won't take root.",
+    "principles": [
+      {
+        "kicker": "Principle 01",
+        "title": "One client — one project",
+        "body": "There are no two identical businesses. So there are no two identical builds from us. Every solution is designed from scratch around your processes, your people and your tools."
+      },
+      {
+        "kicker": "Principle 02",
+        "title": "Stack picked for the task, not for us",
+        "body": "n8n, Make, Python, low-code, custom — we choose what fits your case best. We don't push a technology because it's convenient for us."
+      },
+      {
+        "kicker": "Principle 03",
+        "title": "Won't pay back — we'll say so ourselves",
+        "body": "We don't talk you into automating for the invoice. Sometimes the right answer is \"leave it to the humans.\" We'll say it honestly and explain why."
+      }
+    ],
+    "tagline": "Unique problem → unique solution"
+  },
   "services": {
     "eyebrow": "What we do",
     "title": "We automate knowledge work",
     "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The tech in 2026 makes it fast and cheap. The hard part isn't \"how\", it's \"what's actually worth automating in your business\". That's where we come in.",
     "selectorTitle": "Pick your niche",
     "selectorHint": "We'll show what to automate first in it",
+    "individualNote": "The exact set and stack are tailored to your processes — these are just typical scenarios",
     "niches": [
       {
         "id": "horeca",
@@ -149,11 +175,11 @@
     "steps": [
       {
         "title": "Discovery & audit",
-        "body": "We get on a call, look at the business, and produce a process map plus the spots where automation actually pays off."
+        "body": "We get on a call and dig into your processes — no templates, no canned answers. You get a process map and the spots where automation actually pays off in your specific case."
       },
       {
-        "title": "Prototype",
-        "body": "We build a minimal working version on your real data. You see the impact before signing the bigger scope."
+        "title": "Prototype on your logic",
+        "body": "We build a minimal working version on your real data and scenarios. You see the impact on concrete cases before signing the bigger scope."
       },
       {
         "title": "Rollout",
@@ -168,7 +194,7 @@
   "team": {
     "eyebrow": "Team",
     "title": "Two of us — both hands-on",
-    "body": "We moved to Dubai to bring real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — whoever talks to you in the meeting is the one who writes the code and ships it.",
+    "body": "We moved to Dubai to bring real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — whoever talks to you in the meeting is the one who writes the code and ships it. We run every project personally, from the first call to release.",
     "members": [
       {
         "initials": "DG",
@@ -187,8 +213,12 @@
     "title": "Common questions",
     "items": [
       {
+        "q": "Do you have a ready-made solution for my task?",
+        "a": "No — by design. We don't sell boxes. Every build is assembled around a specific business: your processes, your stack, your people. That's why it actually takes root, instead of \"only working in ideal conditions\"."
+      },
+      {
         "q": "How much does it cost?",
-        "a": "Depends on scope. After the audit we name a range in EUR / AED for a specific scope. You pay either fixed or per milestone."
+        "a": "Depends on scope and complexity — every solution is custom. After the audit we name a range in EUR / AED for a specific scope. You pay either fixed or per milestone."
       },
       {
         "q": "What about data security?",
@@ -215,7 +245,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Tell us about the task",
-    "subtitle": "Fill out the form or message us directly. We'll get back at a time that works for you.",
+    "subtitle": "Fill out the form or message us directly. We'll get back at a time that works for you. We'll look at what you have and propose a solution tailored to your situation.",
     "fields": {
       "name": "Name",
       "business": "Company / project",
@@ -242,9 +272,9 @@
     "en": "EN"
   },
   "meta": {
-    "title": "MagicWork — business process automation",
-    "description": "AI agents, chatbots, integrations, CRM and custom development. Based in Dubai. Document workflow, lead capture, ops — turnkey.",
-    "ogTitle": "MagicWork · Business process automation",
-    "ogDescription": "AI, integrations, CRM, custom dev. Case: −90% time on document workflow for a city administration."
+    "title": "MagicWork — bespoke business process automation",
+    "description": "AI agents, chatbots, integrations, CRM and custom development. Based in Dubai. Built around your operating logic — no boxed software, no templates.",
+    "ogTitle": "MagicWork · Bespoke business automation",
+    "ogDescription": "AI, integrations, CRM, custom dev. Built around your logic. Case: −90% time on document workflow for a city administration."
   }
 }

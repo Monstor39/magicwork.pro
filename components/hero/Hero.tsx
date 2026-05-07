@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const Scene = dynamic(() => import("./Scene").then((m) => m.Scene), { ssr: false });
@@ -25,9 +25,19 @@ export function Hero() {
     >
       <Scene />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 pb-24 pt-8 sm:px-8 sm:pt-16 lg:px-12">
-        <motion.div initial="initial" animate="animate" variants={reveal} transition={{ duration: 0.6, ease }}>
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-7 px-5 pb-24 pt-8 sm:px-8 sm:pt-16 lg:px-12">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={reveal}
+          transition={{ duration: 0.6, ease }}
+          className="flex flex-wrap items-center gap-3"
+        >
           <Eyebrow>{t("eyebrow")}</Eyebrow>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/8 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
+            <Sparkles className="h-3 w-3" />
+            {t("tagIndividual")}
+          </span>
         </motion.div>
 
         <motion.h1
@@ -35,11 +45,17 @@ export function Hero() {
           animate="animate"
           variants={reveal}
           transition={{ duration: 0.7, delay: 0.1, ease }}
-          className="max-w-3xl text-balance font-sans text-[40px] leading-[1.05] tracking-tight sm:text-[58px] lg:text-[72px]"
+          className="max-w-3xl text-balance font-sans text-[40px] font-semibold leading-[1.05] tracking-tight sm:text-[58px] lg:text-[72px]"
         >
           <span className="text-text">{t("headlinePart1")}</span>{" "}
-          <span className="bg-gradient-to-r from-accent via-accent-light to-blue bg-clip-text text-transparent">
-            {t("headlineAccent")}
+          <span className="relative inline-block text-accent">
+            <span className="relative z-10 bg-gradient-to-r from-accent-deep via-accent to-blue bg-clip-text font-display italic text-transparent">
+              {t("headlineAccent")}
+            </span>
+            <span
+              aria-hidden
+              className="absolute inset-x-0 bottom-1 z-0 h-[0.18em] bg-accent/15"
+            />
           </span>
           <br />
           <span className="text-text-muted">{t("headlinePart2")}</span>
@@ -50,7 +66,7 @@ export function Hero() {
           animate="animate"
           variants={reveal}
           transition={{ duration: 0.7, delay: 0.25, ease }}
-          className="max-w-xl text-[16px] leading-relaxed text-text-muted sm:text-[17px]"
+          className="max-w-2xl text-[16px] leading-relaxed text-text-muted sm:text-[18px]"
         >
           {t("subhead")}
         </motion.p>
@@ -64,14 +80,14 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="group inline-flex h-[52px] items-center justify-center gap-2 rounded-md bg-accent px-7 text-[15px] font-medium text-white shadow-[0_0_0_1px_rgba(139,92,246,0.4),0_12px_32px_-10px_rgba(139,92,246,0.7)] transition-all hover:bg-accent-light hover:shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_18px_44px_-10px_rgba(167,139,250,0.8)]"
+            className="group inline-flex h-[52px] items-center justify-center gap-2 rounded-md bg-accent px-7 text-[15px] font-medium text-white elev-cta transition-all hover:bg-accent-light"
           >
             {t("primaryCta")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
             href="#case"
-            className="inline-flex h-[52px] items-center justify-center gap-2 rounded-md border border-border-strong bg-bg-elevated/40 px-7 text-[15px] font-medium text-text backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex h-[52px] items-center justify-center gap-2 rounded-md border border-border-strong bg-white px-7 text-[15px] font-medium text-text transition-colors hover:border-accent hover:text-accent"
           >
             {t("secondaryCta")}
           </a>
@@ -90,7 +106,7 @@ export function Hero() {
             </span>
             {t("spotsOpen")}
           </span>
-          <span className="hidden h-3 w-px bg-border sm:inline-block" />
+          <span className="hidden h-3 w-px bg-border-strong sm:inline-block" />
           <span className="text-text-muted normal-case tracking-normal font-sans">
             {t("trustLine")}
           </span>
@@ -99,7 +115,7 @@ export function Hero() {
 
       <a
         href="#pain"
-        aria-label="scroll"
+        aria-label="Scroll to next section"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-text-subtle transition-colors hover:text-text"
       >
         <ChevronDown className="h-5 w-5 animate-bounce" />

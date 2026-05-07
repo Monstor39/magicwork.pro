@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -16,6 +16,14 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  axes: ["SOFT", "WONK", "opsz"],
+  style: ["normal", "italic"],
 });
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://magicwork.pro";
@@ -74,7 +82,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-bg text-text">
         <NextIntlClientProvider messages={messages} locale={locale}>

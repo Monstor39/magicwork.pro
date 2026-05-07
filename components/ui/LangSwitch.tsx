@@ -20,7 +20,9 @@ export function LangSwitch() {
 
   return (
     <div
-      className="inline-flex items-center gap-1 rounded-md border border-border bg-bg-elevated p-0.5 font-mono text-[11px] uppercase tracking-wider"
+      role="group"
+      aria-label="Language"
+      className="inline-flex items-center gap-1 rounded-md border border-border bg-white p-0.5 font-mono text-[11px] uppercase tracking-wider"
       data-busy={isPending ? "true" : undefined}
     >
       {(["ru", "en"] as const).map((code) => {
@@ -33,7 +35,7 @@ export function LangSwitch() {
             className={
               active
                 ? "rounded-sm bg-accent px-2.5 py-1 text-white"
-                : "rounded-sm px-2.5 py-1 text-text-muted hover:text-text"
+                : "rounded-sm px-2.5 py-1 text-text-muted transition-colors hover:text-text"
             }
             aria-pressed={active}
           >

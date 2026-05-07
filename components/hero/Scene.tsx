@@ -4,9 +4,9 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
-const ACCENT = new THREE.Color("#7C3AED");
+const ACCENT = new THREE.Color("#6D28D9");
 const ACCENT_LIGHT = new THREE.Color("#8B5CF6");
-const BLUE = new THREE.Color("#3B82F6");
+const BLUE = new THREE.Color("#2563EB");
 
 type Pulse = {
   edgeIndex: number;
@@ -27,6 +27,7 @@ function NeuralCloud({
   clickRef: React.RefObject<ClickRef>;
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null!);
+  const haloRef = useRef<THREE.InstancedMesh>(null!);
   const linesRef = useRef<THREE.LineSegments>(null!);
   const pulsesRef = useRef<THREE.Points>(null!);
   const groupRef = useRef<THREE.Group>(null!);
@@ -72,18 +73,25 @@ function NeuralCloud({
   const lineMat = useMemo(
     () =>
       new THREE.LineBasicMaterial({
-        color: new THREE.Color("#7C3AED"),
+        color: new THREE.Color("#5B21B6"),
         transparent: true,
-        opacity: 0.22,
+        opacity: 0.32,
       }),
     [],
   );
 
+  const PULSE_CAPACITY = 60;
   const pulseGeo = useMemo(() => {
     const geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(60 * 3), 3));
-    geo.setAttribute("color", new THREE.BufferAttribute(new Float32Array(60 * 3), 3));
-    geo.setAttribute("alpha", new THREE.BufferAttribute(new Float32Array(60), 1));
+    geo.setAttribute(
+      "position",
+      new THREE.BufferAttribute(new Float32Array(PULSE_CAPACITY * 3), 3),
+    );
+    geo.setAttribute(
+      "color",
+      new THREE.BufferAttribute(new Float32Array(PULSE_CAPACITY * 3), 3),
+    );
+    geo.setAttribute("alpha", new THREE.BufferAttribute(new Float32Array(PULSE_CAPACITY), 1));
     geo.setDrawRange(0, 0);
     return geo;
   }, []);
@@ -103,7 +111,7 @@ function NeuralCloud({
           vAlpha = alpha;
           vColor = color;
           vec4 mv = modelViewMatrix * vec4(position, 1.0);
-          gl_PointSize = 8.0 * (8.0 / -mv.z);
+          gl_PointSize = 14.0 * (8.0 / -mv.z);
           gl_Position = projectionMatrix * mv;
         }
       `,
@@ -113,8 +121,9 @@ function NeuralCloud({
         void main() {
           vec2 uv = gl_PointCoord - vec2(0.5);
           float d = length(uv);
-          float a = smoothstep(0.5, 0.0, d) * vAlpha;
-          gl_FragColor = vec4(vColor, a);
+          float core = smoothstep(0.5, 0.0, d);
+          float a = core * vAlpha;
+          gl_FragColor = vec4(vColor * a, a);
         }
       `,
     });
@@ -132,19 +141,42 @@ function NeuralCloud({
     [],
   );
 
+  const haloMat = useMemo(
+    () =>
+      new THREE.MeshBasicMaterial({
+        color: ACCENT_LIGHT,
+        transparent: true,
+        opacity: 0.18,
+      }),
+    [],
+  );
+
   const pulsesState = useRef<Pulse[]>([]);
   const lastSpawnRef = useRef(0);
 
+  // pre-allocated scratch for useFrame
+  const dummyRef = useRef(new THREE.Object3D());
+  const positionsRef = useRef<Float32Array>(new Float32Array(0));
   useEffect(() => {
-    const dummy = new THREE.Object3D();
+    positionsRef.current = new Float32Array(nodes.length * 3);
+  }, [nodes.length]);
+
+  useEffect(() => {
+    const dummy = dummyRef.current;
     if (!meshRef.current) return;
     nodes.forEach((n, i) => {
       dummy.position.copy(n.base);
       dummy.scale.setScalar(0.05);
       dummy.updateMatrix();
       meshRef.current.setMatrixAt(i, dummy.matrix);
+      if (haloRef.current) {
+        dummy.scale.setScalar(0.12);
+        dummy.updateMatrix();
+        haloRef.current.setMatrixAt(i, dummy.matrix);
+      }
     });
     meshRef.current.instanceMatrix.needsUpdate = true;
+    if (haloRef.current) haloRef.current.instanceMatrix.needsUpdate = true;
   }, [nodes]);
 
   useFrame((state) => {
@@ -177,8 +209,8 @@ function NeuralCloud({
       }
     }
 
-    const dummy = new THREE.Object3D();
-    const positions = new Float32Array(nodes.length * 3);
+    const dummy = dummyRef.current;
+    const positions = positionsRef.current;
     const ATTRACT_RADIUS = 3.2;
     const ATTRACT_RADIUS_SQ = ATTRACT_RADIUS * ATTRACT_RADIUS;
 
@@ -214,11 +246,17 @@ function NeuralCloud({
       dummy.scale.setScalar(scale);
       dummy.updateMatrix();
       meshRef.current.setMatrixAt(i, dummy.matrix);
+      if (haloRef.current) {
+        dummy.scale.setScalar(scale * 2.6);
+        dummy.updateMatrix();
+        haloRef.current.setMatrixAt(i, dummy.matrix);
+      }
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
     }
     meshRef.current.instanceMatrix.needsUpdate = true;
+    if (haloRef.current) haloRef.current.instanceMatrix.needsUpdate = true;
 
     const linePos = lineGeo.getAttribute("position") as THREE.BufferAttribute;
     const linePosArr = linePos.array as Float32Array;
@@ -233,8 +271,12 @@ function NeuralCloud({
     }
     linePos.needsUpdate = true;
 
-    const spawnInterval = clickActive ? 0.05 : 0.18;
-    if (t - lastSpawnRef.current > spawnInterval && pulsesState.current.length < 50 && edges.length > 0) {
+    const spawnInterval = clickActive ? 0.05 : 0.16;
+    if (
+      t - lastSpawnRef.current > spawnInterval &&
+      pulsesState.current.length < PULSE_CAPACITY &&
+      edges.length > 0
+    ) {
       lastSpawnRef.current = t;
       const palette = [ACCENT, ACCENT_LIGHT, BLUE];
       pulsesState.current.push({
@@ -283,8 +325,11 @@ function NeuralCloud({
 
   return (
     <group ref={groupRef}>
+      <instancedMesh ref={haloRef} args={[undefined, undefined, count]} material={haloMat}>
+        <sphereGeometry args={[1, 10, 10]} />
+      </instancedMesh>
       <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
-        <sphereGeometry args={[1, 12, 12]} />
+        <sphereGeometry args={[1, 14, 14]} />
         <meshBasicMaterial color={ACCENT} />
       </instancedMesh>
       <lineSegments ref={linesRef} geometry={lineGeo} material={lineMat} />
@@ -353,24 +398,34 @@ export function Scene() {
     return (
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_40%,rgba(139,92,246,0.12),transparent_65%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_40%,rgba(139,92,246,0.10),transparent_60%)]"
       />
     );
   }
 
-  const count = isMobile ? 60 : 110;
-  const radius = isMobile ? 1.6 : 1.7;
+  const count = isMobile ? 50 : 110;
+  const radius = isMobile ? 2.2 : 1.8;
 
   return (
     <div aria-hidden className="absolute inset-0 -z-10">
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(139,92,246,0.16),transparent_55%),radial-gradient(circle_at_22%_85%,rgba(37,99,235,0.10),transparent_55%)]"
+      />
       <Canvas
         dpr={[1, 1.6]}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        gl={{
+          antialias: true,
+          alpha: true,
+          premultipliedAlpha: true,
+          powerPreference: "high-performance",
+        }}
         camera={{ position: [0, 0, 11], fov: 50 }}
       >
         <NeuralCloud count={count} connectRadius={radius} clickRef={clickRef} />
       </Canvas>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,transparent_28%,rgba(255,255,255,0.78)_72%,rgba(255,255,255,1)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_45%,transparent_18%,rgba(255,255,255,0.55)_60%,rgba(255,255,255,0.95)_92%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
     </div>
   );
 }

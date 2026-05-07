@@ -3,7 +3,7 @@ import { forwardRef, type ButtonHTMLAttributes, type AnchorHTMLAttributes } from
 type Variant = "primary" | "secondary" | "ghost";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-md font-sans text-[14px] font-medium tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2 rounded-md font-sans text-[14px] font-medium tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
 const sizes = {
   md: "h-11 px-5",
@@ -12,9 +12,9 @@ const sizes = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white hover:bg-accent-light shadow-[0_0_0_1px_rgba(139,92,246,0.4),0_10px_30px_-10px_rgba(139,92,246,0.65)] hover:shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_14px_36px_-10px_rgba(167,139,250,0.75)]",
+    "bg-accent text-white hover:bg-accent-light elev-cta",
   secondary:
-    "bg-bg-elevated text-text border border-border-strong hover:border-accent hover:text-accent",
+    "bg-white text-text border border-border-strong hover:border-accent hover:text-accent hover:bg-bg-elevated",
   ghost:
     "text-text-muted hover:text-text",
 };

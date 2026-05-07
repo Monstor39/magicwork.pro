@@ -2,21 +2,25 @@
 
 @theme {
   --color-bg: #FFFFFF;
-  --color-bg-elevated: #F7F7FB;
-  --color-bg-subtle: #F0F0F6;
-  --color-border: rgba(15, 15, 30, 0.08);
-  --color-border-strong: rgba(15, 15, 30, 0.16);
-  --color-accent: #7C3AED;
+  --color-bg-elevated: #FAFAFC;
+  --color-bg-subtle: #F2F2F7;
+  --color-bg-deep: #EDEDF2;
+  --color-border: rgba(15, 15, 30, 0.10);
+  --color-border-strong: rgba(15, 15, 30, 0.18);
+  --color-accent: #6D28D9;
   --color-accent-light: #8B5CF6;
-  --color-accent-dim: rgba(124, 58, 237, 0.12);
-  --color-blue: #3B82F6;
-  --color-success: #10B981;
-  --color-danger: #EF4444;
-  --color-text: #0B0B14;
-  --color-text-muted: #525261;
-  --color-text-subtle: #8E8E9A;
+  --color-accent-deep: #5B21B6;
+  --color-accent-dim: rgba(109, 40, 217, 0.10);
+  --color-blue: #2563EB;
+  --color-cyan: #0891B2;
+  --color-success: #059669;
+  --color-danger: #DC2626;
+  --color-text: #0A0A14;
+  --color-text-muted: #4A4A57;
+  --color-text-subtle: #6E6E7A;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 :root {
@@ -33,6 +37,10 @@ html, body {
 body {
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
+  background-image:
+    radial-gradient(rgba(15, 15, 30, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
 }
 
 ::selection {
@@ -40,6 +48,35 @@ body {
   color: white;
 }
 
+/* ---------- shared elevation utilities ---------- */
+.elev-card {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+    0 1px 2px rgba(15, 15, 30, 0.04),
+    0 8px 24px -12px rgba(15, 15, 30, 0.10);
+}
+.elev-card-hover:hover {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+    0 2px 4px rgba(15, 15, 30, 0.06),
+    0 16px 36px -16px rgba(109, 40, 217, 0.22);
+}
+.elev-cta {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+    0 1px 2px rgba(15, 15, 30, 0.10),
+    0 4px 10px rgba(109, 40, 217, 0.18),
+    0 12px 28px -10px rgba(109, 40, 217, 0.40);
+}
+.elev-cta:hover {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.30) inset,
+    0 1px 2px rgba(15, 15, 30, 0.12),
+    0 6px 14px rgba(109, 40, 217, 0.24),
+    0 18px 40px -12px rgba(109, 40, 217, 0.50);
+}
+
+/* ---------- keyframes ---------- */
 @keyframes pulse-dot {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.6); opacity: 0; }
@@ -60,9 +97,9 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes logo-node-glow {
-  0%, 100% { r: 2.4; opacity: 1; }
-  50% { r: 3.2; opacity: 0.7; }
+@keyframes logo-core-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.18); opacity: 0.85; }
 }
 
 @keyframes logo-pulse-1 {
@@ -84,6 +121,18 @@ body {
   20% { opacity: 1; }
   80% { opacity: 1; }
   100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes logo-pulse-4 {
+  0% { stroke-dashoffset: 24; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
