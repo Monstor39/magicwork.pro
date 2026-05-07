@@ -2,13 +2,48 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
-import { Globe2, Mail } from "lucide-react";
+import { Globe2 } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-type Member = { initials: string; name: string; role: string };
+type Member = { slug: string; initials: string; name: string; role: string };
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+function MemberPortrait({ member }: { member: Member }) {
+  const [errored, setErrored] = useState(false);
+  const showPhoto = !errored;
+
+  return (
+    <div className="relative">
+      <div
+        aria-hidden
+        className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_140deg,#6D28D9,#8B5CF6,#2563EB,#6D28D9)] opacity-90"
+      />
+      <div className="relative h-[124px] w-[124px] overflow-hidden rounded-full bg-white sm:h-[140px] sm:w-[140px]">
+        {showPhoto ? (
+          <Image
+            src={`/team/${member.slug}.jpg`}
+            alt={member.name}
+            width={280}
+            height={280}
+            priority={false}
+            onError={() => setErrored(true)}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-bg-elevated to-bg-subtle">
+            <span className="bg-gradient-to-br from-accent to-blue bg-clip-text font-display text-[36px] font-semibold tracking-tight text-transparent sm:text-[40px]">
+              {member.initials}
+            </span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function Team() {
   const t = useTranslations("team");
@@ -43,7 +78,7 @@ export function Team() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
           {members.map((m, i) => (
             <motion.div
               key={i}
@@ -51,34 +86,15 @@ export function Team() {
               whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="group relative flex items-center gap-5 rounded-2xl border border-border bg-white p-5 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover sm:p-6"
+              className="flex flex-col items-start gap-5"
             >
-              <div className="relative shrink-0">
-                <div
-                  aria-hidden
-                  className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_140deg,#6D28D9,#8B5CF6,#2563EB,#6D28D9)] opacity-90"
-                />
-                <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white">
-                  <span className="bg-gradient-to-br from-accent to-blue bg-clip-text font-display text-[20px] font-semibold tracking-tight text-transparent">
-                    {m.initials}
-                  </span>
-                </div>
-              </div>
-              <div className="flex min-w-0 flex-col gap-1">
-                <p className="truncate text-[16px] font-semibold tracking-tight text-text">
-                  {m.name}
-                </p>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted">
+              <MemberPortrait member={m} />
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[20px] font-semibold tracking-tight text-text">{m.name}</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
                   {m.role}
                 </p>
               </div>
-              <a
-                href="mailto:golodbizai@gmail.com"
-                aria-label={`Email ${m.name}`}
-                className="ml-auto inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border text-text-muted transition-colors hover:border-accent hover:text-accent"
-              >
-                <Mail className="h-3.5 w-3.5" />
-              </a>
             </motion.div>
           ))}
         </div>

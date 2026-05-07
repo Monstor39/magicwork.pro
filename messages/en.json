@@ -226,11 +226,13 @@
     "geoExtra": "Working internationally",
     "members": [
       {
+        "slug": "danila",
         "initials": "DG",
         "name": "Danila Golod",
         "role": "Founder · Automation Lead"
       },
       {
+        "slug": "mikhail",
         "initials": "MV",
         "name": "Mikhail Vasilyevich",
         "role": "Co-founder · Engineering"

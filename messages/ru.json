@@ -226,11 +226,13 @@
     "geoExtra": "Работаем международно",
     "members": [
       {
+        "slug": "danila",
         "initials": "ДГ",
         "name": "Голод Данила",
         "role": "Founder · Automation Lead"
       },
       {
+        "slug": "mikhail",
         "initials": "МВ",
         "name": "Михаил Васильевич",
         "role": "Co-founder · Engineering"
