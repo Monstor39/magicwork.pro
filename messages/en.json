@@ -13,7 +13,7 @@
     "headlinePart1": "We automate",
     "headlineAccent": "business processes",
     "headlinePart2": "so they run without you in the room",
-    "subhead": "We dig into the business, map the processes — and build the solution around your operating logic. Not boxed software. AI agents, chatbots, integrations, CRM and custom builds.",
+    "subhead": "We map your processes and build around your logic — not boxed software. AI agents, chatbots, integrations, CRM, custom.",
     "primaryCta": "Start a project",
     "secondaryCta": "See the case",
     "trustLine": "Document workflow · city administration · −90% time · in production",
@@ -38,7 +38,7 @@
       },
       {
         "title": "Revenue grows — payroll grows in lockstep",
-        "body": "Without automation each new dollar of revenue costs almost as much as the old. Hiring, training, churn. The business scales only on your nerves."
+        "body": "Without automation, every new dollar of revenue costs almost as much as the last. Hiring, training, churn. The business scales on your nerves."
       }
     ],
     "answer": "We come in, map the processes and tell you straight: automate fully, automate partially, or don't bother. No fluff, no upsell."
@@ -51,7 +51,7 @@
       {
         "kicker": "Principle 01",
         "title": "One client — one project",
-        "body": "There are no two identical businesses. So there are no two identical builds from us. Every solution is designed from scratch around your processes, your people and your tools."
+        "body": "No two businesses are alike — neither are our builds. Every solution is designed from scratch around your processes, people and tools."
       },
       {
         "kicker": "Principle 02",
@@ -69,9 +69,9 @@
   "services": {
     "eyebrow": "What we do",
     "title": "We automate knowledge work",
-    "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The tech in 2026 makes it fast and cheap. The hard part isn't \"how\", it's \"what's actually worth automating in your business\". That's where we come in.",
+    "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The hard part isn't \"how\" — it's \"what's actually worth automating\". That's where we come in.",
     "selectorTitle": "Pick your niche",
-    "selectorHint": "We'll show what to automate first in it",
+    "selectorHint": "We'll show what to automate first",
     "individualNote": "The exact set and stack are tailored to your processes — these are just typical scenarios",
     "niches": [
       {
@@ -79,7 +79,7 @@
         "label": "Restaurant · HoReCa",
         "summary": "Orders, bookings, supplies and analytics — no managers on the phone.",
         "items": [
-          "Order intake on WhatsApp/Telegram with auto-write into POS",
+          "Order intake via WhatsApp/Telegram, auto-saved to POS",
           "Table reservations with confirmations and reminders",
           "Auto-reports on revenue, average check and bestselling items",
           "Stock control, auto-purchase orders to suppliers, demand forecast"
@@ -101,7 +101,7 @@
         "label": "Agency · services",
         "summary": "Lead gen, qualification and client onboarding on autopilot.",
         "items": [
-          "AI-qualified inbound: bot finds out budget and scope itself",
+          "AI qualifies inbound: the bot asks about budget and scope on its own",
           "Auto-generated proposals and contracts from CRM templates",
           "Client reports: metrics, screenshots, status — weekly, hands-off",
           "Employee onboarding: checklists, access, training in a Telegram bot"
@@ -193,7 +193,7 @@
   },
   "team": {
     "eyebrow": "Team",
-    "title": "Two of us — both hands-on",
+    "title": "Two of us — both build",
     "body": "We moved to Dubai to bring real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — whoever talks to you in the meeting is the one who writes the code and ships it. We run every project personally, from the first call to release.",
     "members": [
       {
@@ -245,7 +245,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Tell us about the task",
-    "subtitle": "Fill out the form or message us directly. We'll get back at a time that works for you. We'll look at what you have and propose a solution tailored to your situation.",
+    "subtitle": "Fill out the form or message us directly — we'll get back at a time that works for you. We'll look at what you have and propose a fit.",
     "fields": {
       "name": "Name",
       "business": "Company / project",
@@ -273,7 +273,7 @@
   },
   "meta": {
     "title": "MagicWork — bespoke business process automation",
-    "description": "AI agents, chatbots, integrations, CRM and custom development. Based in Dubai. Built around your operating logic — no boxed software, no templates.",
+    "description": "AI agents, chatbots, integrations, CRM, custom development. Dubai. Built around your operating logic — no boxes, no templates. Case: −90% time on document workflow.",
     "ogTitle": "MagicWork · Bespoke business automation",
     "ogDescription": "AI, integrations, CRM, custom dev. Built around your logic. Case: −90% time on document workflow for a city administration."
   }
