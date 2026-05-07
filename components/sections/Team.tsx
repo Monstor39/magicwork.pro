@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, Send, Mail } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
@@ -25,9 +25,20 @@ export function Team() {
           </h2>
           <p className="max-w-md text-[15px] leading-relaxed text-text-muted">{t("body")}</p>
 
-          <div className="mt-2 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-text-muted elev-card">
-            <MapPin className="h-3 w-3 text-accent" />
-            <span>Dubai</span>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted elev-card">
+              <MapPin className="h-3 w-3 text-accent" />
+              <span>Dubai, UAE</span>
+            </span>
+            <a
+              href="https://t.me/Magicworkpro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted transition-colors hover:border-accent hover:text-accent elev-card"
+            >
+              <Send className="h-3 w-3 text-accent" />
+              <span>@Magicworkpro</span>
+            </a>
           </div>
         </div>
 
@@ -39,32 +50,34 @@ export function Team() {
               whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="group relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-border bg-white p-7 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover"
+              className="group relative flex items-center gap-5 rounded-2xl border border-border bg-white p-5 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover"
             >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-accent/12 blur-2xl transition-opacity duration-500 group-hover:bg-accent/20"
-              />
-              <div className="relative">
+              <div className="relative shrink-0">
                 <div
                   aria-hidden
-                  className="absolute -inset-1 rounded-full bg-gradient-to-br from-accent via-accent-light to-blue opacity-80 blur-[2px]"
+                  className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_140deg,#6D28D9,#8B5CF6,#2563EB,#6D28D9)] opacity-90"
                 />
-                <div
-                  aria-hidden
-                  className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white font-display text-[24px] font-semibold italic tracking-tight text-text"
-                >
-                  <span className="bg-gradient-to-br from-accent to-blue bg-clip-text text-transparent">
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white">
+                  <span className="bg-gradient-to-br from-accent to-blue bg-clip-text font-display text-[20px] font-semibold italic tracking-tight text-transparent">
                     {m.initials}
                   </span>
                 </div>
               </div>
-              <div className="relative flex flex-col gap-1">
-                <p className="text-[18px] font-semibold tracking-tight text-text">{m.name}</p>
-                <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-text-muted">
+              <div className="flex min-w-0 flex-col gap-1">
+                <p className="truncate text-[16px] font-semibold tracking-tight text-text">
+                  {m.name}
+                </p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-text-muted">
                   {m.role}
                 </p>
               </div>
+              <a
+                href="mailto:golodbizai@gmail.com"
+                aria-label={`Email ${m.name}`}
+                className="ml-auto inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border text-text-muted transition-colors hover:border-accent hover:text-accent"
+              >
+                <Mail className="h-3.5 w-3.5" />
+              </a>
             </motion.div>
           ))}
         </div>
