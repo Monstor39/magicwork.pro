@@ -195,7 +195,10 @@
   "team": {
     "eyebrow": "Team",
     "title": "Two of us — both build",
-    "body": "We moved to Dubai to deliver real value to local businesses: ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release.",
+    "body": "We moved to Dubai to deliver real value to local businesses: we ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release.",
+    "geoTitle": "Where we work",
+    "geoCore": "Russia · CIS · UAE",
+    "geoExtra": "EU — on request",
     "members": [
       {
         "initials": "DG",

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
-import { MapPin, Send, Mail } from "lucide-react";
+import { Globe2, Mail } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
@@ -25,20 +25,21 @@ export function Team() {
           </h2>
           <p className="max-w-md text-[15px] leading-relaxed text-text-muted">{t("body")}</p>
 
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted elev-card">
-              <MapPin className="h-3 w-3 text-accent" />
-              <span>Dubai, UAE</span>
-            </span>
-            <a
-              href="https://t.me/Magicworkpro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted transition-colors hover:border-accent hover:text-accent elev-card"
-            >
-              <Send className="h-3 w-3 text-accent" />
-              <span>@Magicworkpro</span>
-            </a>
+          <div className="mt-3 flex flex-col gap-2.5 rounded-2xl border border-border bg-white p-4 elev-card">
+            <div className="flex items-center gap-2">
+              <Globe2 className="h-3.5 w-3.5 text-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-subtle">
+                {t("geoTitle")}
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center rounded-full bg-gradient-to-br from-accent to-blue px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-white shadow-[0_4px_10px_-4px_rgba(109,40,217,0.5)]">
+                {t("geoCore")}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
+                {t("geoExtra")}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -50,7 +51,7 @@ export function Team() {
               whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
-              className="group relative flex items-center gap-5 rounded-2xl border border-border bg-white p-5 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover"
+              className="group relative flex items-center gap-5 rounded-2xl border border-border bg-white p-5 elev-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:elev-card-hover sm:p-6"
             >
               <div className="relative shrink-0">
                 <div
