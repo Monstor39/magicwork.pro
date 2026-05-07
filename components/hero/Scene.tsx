@@ -154,12 +154,18 @@ function NeuralCloud({
   const pulsesState = useRef<Pulse[]>([]);
   const lastSpawnRef = useRef(0);
 
-  // pre-allocated scratch for useFrame
+  // pre-allocated scratch for useFrame (sync-init so it's ready before first frame)
   const dummyRef = useRef(new THREE.Object3D());
-  const positionsRef = useRef<Float32Array>(new Float32Array(0));
-  useEffect(() => {
-    positionsRef.current = new Float32Array(nodes.length * 3);
-  }, [nodes.length]);
+  const positions = useMemo(() => new Float32Array(nodes.length * 3), [nodes.length]);
+
+  // seed positions[] with base coords so the first lineGeo update doesn't write NaN
+  useMemo(() => {
+    for (let i = 0; i < nodes.length; i++) {
+      positions[i * 3] = nodes[i].base.x;
+      positions[i * 3 + 1] = nodes[i].base.y;
+      positions[i * 3 + 2] = nodes[i].base.z;
+    }
+  }, [nodes, positions]);
 
   useEffect(() => {
     const dummy = dummyRef.current;
@@ -210,7 +216,6 @@ function NeuralCloud({
     }
 
     const dummy = dummyRef.current;
-    const positions = positionsRef.current;
     const ATTRACT_RADIUS = 3.2;
     const ATTRACT_RADIUS_SQ = ATTRACT_RADIUS * ATTRACT_RADIUS;
 
