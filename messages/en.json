@@ -19,7 +19,32 @@
     "secondaryCta": "See the case",
     "trustLine": "Document workflow · city administration · −90% time · in production",
     "spotsOpen": "2 slots open this month",
-    "tagIndividual": "Tailored to every business"
+    "tagIndividual": "Tailored to every business",
+    "tiles": {
+      "metric": {
+        "kicker": "Document workflow",
+        "live": "LIVE",
+        "value": "−90%",
+        "delta": "time"
+      },
+      "flow": {
+        "kicker": "Lead → CRM",
+        "node1": "Inbox",
+        "node2": "AI",
+        "node3": "CRM",
+        "status": "Auto · 24/7"
+      },
+      "chart": {
+        "kicker": "Conversion",
+        "delta": "+42%",
+        "day1": "Mon",
+        "day2": "Wed",
+        "day3": "Fri",
+        "day4": "Sun"
+      },
+      "badge1": "AI agent",
+      "badge2": "No-touch"
+    }
   },
   "pain": {
     "eyebrow": "Pains",
@@ -196,9 +221,9 @@
     "eyebrow": "Team",
     "title": "Two of us — both build",
     "body": "We moved to Dubai to deliver real value to local businesses: we ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release.",
-    "geoTitle": "Where we work",
-    "geoCore": "Russia · CIS · UAE",
-    "geoExtra": "EU — on request",
+    "geoTitle": "Based in",
+    "geoCore": "Dubai · Russia",
+    "geoExtra": "Working internationally",
     "members": [
       {
         "initials": "DG",

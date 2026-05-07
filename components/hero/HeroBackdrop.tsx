@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import {
   ArrowUpRight,
   Bot,
-  Briefcase,
   CheckCircle2,
   FileText,
   LineChart,
@@ -23,7 +23,6 @@ export function HeroBackdrop() {
   const mxs = useSpring(mx, { stiffness: 60, damping: 18, mass: 0.6 });
   const mys = useSpring(my, { stiffness: 60, damping: 18, mass: 0.6 });
 
-  // parallax magnitudes per layer
   const x1 = useTransform(mxs, (v) => v * 12);
   const y1 = useTransform(mys, (v) => v * 12);
   const x2 = useTransform(mxs, (v) => v * -8);
@@ -53,7 +52,6 @@ export function HeroBackdrop() {
 
   return (
     <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
-      {/* mesh-gradient blobs */}
       <motion.div
         animate={
           reduced
@@ -87,7 +85,6 @@ export function HeroBackdrop() {
         className="absolute right-[8rem] bottom-[-8rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(96,165,250,0.40),rgba(37,99,235,0.10)_55%,transparent_75%)] blur-3xl"
       />
 
-      {/* subtle dotted grid behind cards (right half only) */}
       <div
         className="absolute inset-y-0 right-0 left-1/2 opacity-[0.4]"
         style={{
@@ -101,7 +98,6 @@ export function HeroBackdrop() {
         }}
       />
 
-      {/* connecting flow line behind tiles */}
       <svg
         className="absolute inset-0 h-full w-full hidden lg:block"
         viewBox="0 0 1200 800"
@@ -133,7 +129,6 @@ export function HeroBackdrop() {
         </path>
       </svg>
 
-      {/* floating dashboard tiles (right side) */}
       <motion.div
         style={{ x: x1, y: y1 }}
         initial={{ opacity: 0, y: 30 }}
@@ -170,7 +165,6 @@ export function HeroBackdrop() {
         </FloatingTile>
       </motion.div>
 
-      {/* small badges scattered for density */}
       <motion.div
         style={{ x: x1, y: y1 }}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -178,7 +172,7 @@ export function HeroBackdrop() {
         transition={{ duration: 0.6, delay: 1.1, ease }}
         className="absolute right-[42%] top-[32%] hidden lg:block"
       >
-        <BadgeChip icon={<Bot className="h-3 w-3" />} label="AI agent" />
+        <Badge1 />
       </motion.div>
 
       <motion.div
@@ -188,10 +182,9 @@ export function HeroBackdrop() {
         transition={{ duration: 0.6, delay: 1.25, ease }}
         className="absolute right-[35%] bottom-[28%] hidden lg:block"
       >
-        <BadgeChip icon={<Sparkles className="h-3 w-3" />} label="No-touch" />
+        <Badge2 />
       </motion.div>
 
-      {/* hard scrim on the left so headline never collides with the cards */}
       <div className="pointer-events-none absolute inset-y-0 left-0 right-1/2 sm:right-1/3 bg-[linear-gradient(to_right,white_0%,rgba(255,255,255,0.95)_42%,rgba(255,255,255,0.55)_72%,transparent_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
     </div>
@@ -232,24 +225,25 @@ function FloatingTile({
 }
 
 function MetricTile() {
+  const t = useTranslations("hero.tiles.metric");
   return (
     <div className="relative w-[260px] overflow-hidden rounded-2xl border border-border bg-white/95 p-5 backdrop-blur-md elev-card">
       <div className="flex items-center justify-between">
         <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-text-subtle">
           <FileText className="h-3 w-3 text-accent" />
-          Документооборот
+          {t("kicker")}
         </span>
         <span className="rounded-full bg-success/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-success">
-          LIVE
+          {t("live")}
         </span>
       </div>
       <div className="mt-3 flex items-baseline gap-2">
         <span className="font-display text-[42px] font-semibold leading-none tracking-tight text-text italic">
-          −90%
+          {t("value")}
         </span>
         <span className="inline-flex items-center gap-0.5 text-[11px] text-success">
           <ArrowUpRight className="h-3 w-3" />
-          time
+          {t("delta")}
         </span>
       </div>
       <div className="mt-4 flex h-10 items-end gap-1.5">
@@ -266,23 +260,24 @@ function MetricTile() {
 }
 
 function FlowTile() {
+  const t = useTranslations("hero.tiles.flow");
   return (
     <div className="relative w-[230px] overflow-hidden rounded-2xl border border-border bg-white/95 p-4 backdrop-blur-md elev-card">
       <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-text-subtle">
         <Zap className="h-3 w-3 text-accent" />
-        Lead → CRM
+        {t("kicker")}
       </div>
       <div className="mt-3 flex items-center justify-between">
-        <FlowNode label="Inbox" />
+        <FlowNode label={t("node1")} />
         <FlowArrow />
-        <FlowNode label="AI" highlight />
+        <FlowNode label={t("node2")} highlight />
         <FlowArrow />
-        <FlowNode label="CRM" />
+        <FlowNode label={t("node3")} />
       </div>
       <div className="mt-3 flex items-center gap-1.5 rounded-md bg-success/10 px-2 py-1.5">
         <CheckCircle2 className="h-3 w-3 text-success" />
         <span className="font-mono text-[10px] uppercase tracking-wider text-success">
-          Auto · 24/7
+          {t("status")}
         </span>
       </div>
     </div>
@@ -319,15 +314,16 @@ function FlowArrow() {
 }
 
 function ChartTile() {
+  const t = useTranslations("hero.tiles.chart");
   return (
     <div className="relative w-[240px] overflow-hidden rounded-2xl border border-border bg-white/95 p-4 backdrop-blur-md elev-card">
       <div className="flex items-center justify-between">
         <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-text-subtle">
           <LineChart className="h-3 w-3 text-accent" />
-          Conversion
+          {t("kicker")}
         </span>
         <span className="font-mono text-[10px] font-semibold text-accent">
-          +42%
+          {t("delta")}
         </span>
       </div>
       <svg viewBox="0 0 220 60" className="mt-3 h-12 w-full">
@@ -365,21 +361,34 @@ function ChartTile() {
         </circle>
       </svg>
       <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-text-subtle">
-        <span>Mon</span>
-        <span>Wed</span>
-        <span>Fri</span>
-        <span>Sun</span>
+        <span>{t("day1")}</span>
+        <span>{t("day2")}</span>
+        <span>{t("day3")}</span>
+        <span>{t("day4")}</span>
       </div>
     </div>
   );
 }
 
-function BadgeChip({ icon, label }: { icon: React.ReactNode; label: string }) {
+function Badge1() {
+  const t = useTranslations("hero.tiles");
   return (
     <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/90 px-3 py-1.5 backdrop-blur-md elev-card">
-      <span className="text-accent">{icon}</span>
+      <Bot className="h-3 w-3 text-accent" />
       <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-text">
-        {label}
+        {t("badge1")}
+      </span>
+    </div>
+  );
+}
+
+function Badge2() {
+  const t = useTranslations("hero.tiles");
+  return (
+    <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/90 px-3 py-1.5 backdrop-blur-md elev-card">
+      <Sparkles className="h-3 w-3 text-accent" />
+      <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-text">
+        {t("badge2")}
       </span>
     </div>
   );
