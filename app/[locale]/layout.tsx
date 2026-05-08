@@ -39,7 +39,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const url = locale === routing.defaultLocale ? SITE : `${SITE}/${locale}`;
+  const url = `${SITE}/${locale}`;
   return {
     metadataBase: new URL(SITE),
     title: t("title"),
@@ -47,7 +47,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        ru: SITE,
+        ru: `${SITE}/ru`,
         en: `${SITE}/en`,
       },
     },

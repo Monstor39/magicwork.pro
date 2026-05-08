@@ -46,16 +46,42 @@ export function Contact() {
 
     setStatus("submitting");
     try {
-      const res = await fetch("/api/lead", {
+      const tgToken = process.env.NEXT_PUBLIC_TG_BOT_TOKEN;
+      const tgChat = process.env.NEXT_PUBLIC_TG_CHAT_ID;
+      const name = String(data.get("name") ?? "").trim();
+      const contact = String(data.get("contact") ?? "").trim();
+      const business = String(data.get("business") ?? "").trim();
+      const pain = String(data.get("pain") ?? "").trim();
+      const time = String(data.get("time") ?? "").trim();
+
+      if (!name || !contact) throw new Error("missing_fields");
+
+      if (!tgToken || !tgChat) {
+        console.warn("[lead] telegram not configured", { name, contact, business, pain, time, locale });
+        setStatus("success");
+        form.reset();
+        return;
+      }
+
+      const text = [
+        "🆕 Новая заявка с magicwork.pro",
+        `Имя: ${name}`,
+        business && `Компания: ${business}`,
+        pain && `Запрос: ${pain}`,
+        `Контакт: ${contact}`,
+        time && `Удобное время: ${time}`,
+        `Локаль: ${locale}`,
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+      const res = await fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: data.get("name"),
-          business: data.get("business"),
-          pain: data.get("pain"),
-          contact: data.get("contact"),
-          time: data.get("time"),
-          locale,
+          chat_id: tgChat,
+          text,
+          disable_web_page_preview: true,
         }),
       });
       if (!res.ok) throw new Error("submit failed");

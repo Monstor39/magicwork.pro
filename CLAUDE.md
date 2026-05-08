@@ -9,9 +9,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Package manager is **pnpm** (see `pnpm-workspace.yaml`, `pnpm-lock.yaml`). Do not switch to npm/yarn.
 
 - `pnpm dev` — Next.js dev server on http://localhost:3000
-- `pnpm build` — production build
-- `pnpm start` — serve production build
+- `pnpm build` — static export → `out/` (the deployable artifact)
 - `pnpm lint` — ESLint (flat config, `eslint.config.mjs`)
+
+There is no `pnpm start` — the site is static (`output: "export"`), deployed to GitHub Pages.
 
 There is no test runner configured. There is no typecheck script — run `pnpm exec tsc --noEmit` if you need one.
 
@@ -19,19 +20,21 @@ There is no test runner configured. There is no typecheck script — run `pnpm e
 
 ## Architecture
 
-Single-page marketing site for **MagicWork** — a localized landing assembled from section components, with one lead-intake API route. Stack: **Next.js 16.2.6 App Router + React 19.2.4 + Tailwind CSS v4 + next-intl + Resend**.
+Single-page marketing site for **MagicWork** — a localized landing assembled from section components. **Statically exported** and deployed to **GitHub Pages** at `magicwork.pro`. There is no server runtime: leads are sent directly from the browser to the Telegram Bot API. Stack: **Next.js 16.2.6 App Router (static export) + React 19.2.4 + Tailwind CSS v4 + next-intl**.
 
 ### Things that diverge from defaults
 
-- **Middleware lives in `proxy.ts`, not `middleware.ts`.** It runs the next-intl locale middleware. Don't move/rename it — that's a deliberate convention of this Next.js version (see AGENTS.md).
+- **Static export only.** `next.config.ts` sets `output: "export"`, `trailingSlash: true`, `images: { unoptimized: true }`. Build emits `out/`, which is uploaded to GH Pages by `.github/workflows/deploy.yml`. No middleware, no API routes, no dynamic SSR — anything that requires Node at request time will break the build.
+- **No middleware.** There is no `proxy.ts` / `middleware.ts` (middleware can't run on GH Pages). Locale routing is handled purely by `app/[locale]/...` + `generateStaticParams`. Root `/` is served by `public/index.html`, which redirects to `/ru/` (or `/en/` based on `navigator.language`).
 - **Tailwind v4 — no `tailwind.config.{js,ts}`.** Theme tokens (`--color-bg`, `--color-accent`, `--font-display`, etc.) are declared in `app/globals.css` inside `@theme { ... }`. Add new design tokens there, not in a config file.
 - **Path alias:** `@/*` → project root (`tsconfig.json`).
-- **Async `params`:** route handlers and pages destructure `params` as a `Promise` (e.g. `params: Promise<{ locale: string }>`). Always `await` it. This is the current Next conventions — do not "fix" it.
+- **Async `params`:** pages destructure `params` as a `Promise` (e.g. `params: Promise<{ locale: string }>`). Always `await` it. This is the current Next conventions — do not "fix" it.
 - **`setRequestLocale(locale)`** must be called at the top of every locale-scoped server component (page + layout) to enable static rendering with next-intl.
+- **`force-static` on metadata routes.** `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` all export `const dynamic = "force-static"` — required for `output: "export"`.
 
 ### Routing & i18n
 
-- Locales: `ru` (default), `en`. Configured in `i18n/routing.ts` with `localePrefix: "as-needed"` — the default locale has no prefix (`/`), `en` is at `/en`.
+- Locales: `ru` (default), `en`. Configured in `i18n/routing.ts` with `localePrefix: "always"` — RU is at `/ru/`, EN is at `/en/`. Bare `/` is a static redirect from `public/index.html`. (We can't use `as-needed` because there's no middleware to do the locale-detection redirect.)
 - `i18n/request.ts` wires per-request messages from `messages/{locale}.json`.
 - `i18n/navigation.ts` exports locale-aware `Link`, `redirect`, `useRouter`, etc. — **import navigation from `@/i18n/navigation`, not from `next/link` / `next/navigation`** for any user-facing in-app links.
 - `next.config.ts` wraps the config with `createNextIntlPlugin("./i18n/request.ts")`.
@@ -48,14 +51,22 @@ Single-page marketing site for **MagicWork** — a localized landing assembled f
 
 Most sections use a simple two-row layout: heading block (Eyebrow + h2 + optional lead) at the top with `max-w-3xl`, content below at full section width. The two-column `grid lg:grid-cols-[1fr_1.4fr]` pattern was deliberately removed from `Faq` and `Services` because the heading column left too much empty space — don't reintroduce it without a reason. `Approach` is the exception (it has a meaningful `tagline` pill in the left column).
 
-### Lead-intake API
+### Lead intake (browser → Telegram)
 
-`app/api/lead/route.ts` (`POST /api/lead`) accepts a JSON lead payload and fans it out to:
-- **Resend** (email) if `RESEND_API_KEY` is set — `LEAD_FROM_EMAIL` → `LEAD_EMAIL`
-- **Telegram** if both `TG_BOT_TOKEN` and `TG_CHAT_ID` are set
-- If neither is configured, the lead is logged to stdout and the request still returns `{ ok: true }` (intentional — keeps form working in dev).
+The contact form in `components/sections/Contact.tsx` POSTs the lead **directly from the browser** to `https://api.telegram.org/bot<TOKEN>/sendMessage`. There is no backend.
 
-Required fields are `name` and `contact`; everything else is optional. See `.env.local.example` for the full env list, including `NEXT_PUBLIC_SITE_URL` used by metadata + sitemap.
+- Required fields: `name`, `contact`. Everything else is optional.
+- `NEXT_PUBLIC_TG_BOT_TOKEN` and `NEXT_PUBLIC_TG_CHAT_ID` are baked into the client bundle at build time. **This means the bot token is publicly visible** to anyone who inspects the page — accepted trade-off for static hosting. The bot only has permission to send messages to its own chat, so the worst case is spam to the lead group; mitigate by rotating the token via @BotFather.
+- If either env is missing, the form silently logs to console and shows the success state (keeps dev painless).
+
+In CI the secrets come from GitHub Actions: `TG_BOT_TOKEN`, `TG_CHAT_ID` (set in repo Settings → Secrets and variables → Actions). The workflow exposes them as `NEXT_PUBLIC_*` for the build only.
+
+### Deployment
+
+- Push to `main` triggers `.github/workflows/deploy.yml` → builds → uploads `out/` → publishes to GH Pages.
+- `public/CNAME` (`magicwork.pro`) tells Pages the custom domain.
+- `public/.nojekyll` disables Jekyll so `_next/` assets are served as-is.
+- DNS at reg.ru: A records on `@` to GitHub Pages IPs (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`), CNAME on `www` → `<user>.github.io`.
 
 ### Styling conventions
 
