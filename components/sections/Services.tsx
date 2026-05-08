@@ -45,8 +45,8 @@ export function Services() {
 
   return (
     <Section id="services">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-        <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-10">
+        <div className="flex max-w-3xl flex-col gap-5">
           <Eyebrow>{t("eyebrow")}</Eyebrow>
           <h2 className="text-balance text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-[44px]">
             {t("title")}
@@ -55,11 +55,16 @@ export function Services() {
         </div>
 
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-1.5">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-subtle">
-              {t("selectorTitle")}
+          <div className="flex flex-col gap-2.5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+              {t("framing")}
             </p>
-            <p className="text-[14px] text-text-muted">{t("selectorHint")}</p>
+            <div className="flex flex-col gap-1.5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-subtle">
+                {t("selectorTitle")}
+              </p>
+              <p className="text-[14px] text-text-muted">{t("selectorHint")}</p>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -136,13 +141,22 @@ export function Services() {
             </AnimatePresence>
           </div>
 
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 self-start text-[13px] text-text-muted transition-colors hover:text-accent"
-          >
-            <span>{t("ctaHint")}</span>
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <a
+              href="#contact"
+              className="group inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-[14px] font-medium text-white elev-cta transition-all hover:bg-accent-light"
+            >
+              {t("bottomCta")}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href="#contact"
+              className="group inline-flex items-center gap-2 self-start text-[13px] text-text-muted transition-colors hover:text-accent sm:self-auto"
+            >
+              <span>{t("ctaHint")}</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </div>
         </div>
       </div>
     </Section>

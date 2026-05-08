@@ -7,18 +7,21 @@
     "team": "Team",
     "faq": "FAQ",
     "contact": "Contact",
-    "cta": "Get in touch"
+    "aiLeaders": "Leaders",
+    "cta": "Free audit"
   },
   "hero": {
     "eyebrow": "Magic · Work · Pro",
     "headlinePart1": "We automate",
     "headlineAccent": "business processes",
     "headlinePart2": "so they run without you in the room",
-    "subhead": "We map your processes and build around your logic — not boxed software. AI agents, chatbots, integrations, CRM, custom.",
-    "primaryCta": "Start a project",
-    "secondaryCta": "See the case",
+    "subhead": "We map your processes, run the ROI numbers, and build around your logic — not boxed software. Won't pay back — we'll say so ourselves and pass.",
+    "proofLine": "8 months in production · Dubai & worldwide · n8n / Make / Python / AI",
+    "primaryCta": "Free 30-minute audit",
+    "secondaryCta": "See the case: −90% in 3 months",
+    "tertiaryCta": "Ask what to automate first",
     "trustLine": "Document workflow · city administration · −90% time · in production",
-    "spotsOpen": "2 slots open this month",
+    "spotsOpen": "Open to new projects",
     "tagIndividual": "Tailored to every business",
     "tiles": {
       "metric": {
@@ -46,33 +49,143 @@
       "badge2": "No-touch"
     }
   },
+  "aiLeaders": {
+    "eyebrow": "Leaders",
+    "title": "They pulled ahead. It's not magic — it's AI and automation.",
+    "lead": "Ten companies that didn't just adopt the tech — they used it to break away from competitors. Sometimes it's AI, sometimes it's plain old robots and scripts. The common thread: they stopped doing repetitive work by hand a long time ago.",
+    "labels": {
+      "industry": "Industry",
+      "region": "Region",
+      "whatAutomated": "What's automated",
+      "howAI": "How they use AI",
+      "lead": "How far ahead"
+    },
+    "companies": [
+      {
+        "name": "Klarna",
+        "industry": "Fintech · BNPL",
+        "region": "Sweden · global",
+        "oneLineEdge": "AI assistant does the work of 700 support agents — and answers in 2 minutes instead of 11.",
+        "whatTheyAutomated": "Customer support across 23 countries handled by a single AI assistant. Internal comms, marketing, and legal run through a corporate GPT portal used daily by 90% of staff.",
+        "howTheyUseAI": "An OpenAI-powered assistant handles chat in 35+ languages 24/7, classifies tickets, processes returns and disputes. The back office plugs into GPT through Klarna's internal Kiki tool.",
+        "leadVsCompetitors": "2.3M conversations in the first month — two-thirds of all CS traffic. Resolution time fell from 11 minutes to under two. Repeat contacts down 25%. Estimated profit impact: $40M a year."
+      },
+      {
+        "name": "Netflix",
+        "industry": "Media · streaming",
+        "region": "US · global",
+        "oneLineEdge": "80% of all viewing comes from recommendations, not search.",
+        "whatTheyAutomated": "Content discovery, personalized poster artwork per viewer, video encoding and delivery, A/B-tested promotions.",
+        "howTheyUseAI": "Collaborative filtering plus content embeddings. A personally ranked home screen for every viewer. Models predict retention before a show even airs.",
+        "leadVsCompetitors": "80% of watch hours are algorithm-initiated. The recommender is estimated to retain about $1B in revenue per year — competitors haven't caught up."
+      },
+      {
+        "name": "Amazon",
+        "industry": "E-commerce · logistics",
+        "region": "US · global",
+        "oneLineEdge": "Recommendations drive 35% of sales. 750,000+ robots run the warehouses.",
+        "whatTheyAutomated": "Warehouse logistics after the $775M Kiva Systems acquisition; catalog recommendations; dynamic pricing; demand forecasting per SKU; last-mile delivery.",
+        "howTheyUseAI": "Item-to-item collaborative filtering on the home page and product cards. Deep learning per SKU. Computer vision in fulfillment centers for picking. LLM assistants for shoppers and sellers (Rufus).",
+        "leadVsCompetitors": "35% of revenue attributed to recommendations. Robots doubled storage density and dropped operating cost by ~20%. ~1.6M packages a day in the US alone."
+      },
+      {
+        "name": "JPMorgan",
+        "industry": "Banking · legal ops",
+        "region": "US",
+        "oneLineEdge": "AI parses 12,000 contracts in seconds — saving 360,000 lawyer-hours a year.",
+        "whatTheyAutomated": "Parsing and classification of commercial loan agreements (project COIN). Compliance checks. KYC procedures.",
+        "howTheyUseAI": "NLP, ML, and image recognition extract clauses, classify language, and flag risky or non-standard terms in contracts.",
+        "leadVsCompetitors": "360,000 lawyer-hours a year — that's 41 person-years of work. Compliance errors down 80%. Estimated savings: $144M a year."
+      },
+      {
+        "name": "Spotify",
+        "industry": "Media · streaming",
+        "region": "Sweden · global",
+        "oneLineEdge": "Discover Weekly has been streamed 100B+ times — a fresh playlist for every user.",
+        "whatTheyAutomated": "Music discovery, an AI DJ, segmentation of billions of daily events for ads, AI-voiced track intros.",
+        "howTheyUseAI": "Collaborative filtering plus audio-NLP embeddings. Neural ranking. Generative voice for the AI DJ. Prompted Playlist turns a text request into a playlist.",
+        "leadVsCompetitors": "100B+ Discover Weekly streams. 678M users. Apple Music and Amazon Music trail on personalization — Spotify keeps widening the gap with LLM features."
+      },
+      {
+        "name": "Stripe",
+        "industry": "Fintech · payments",
+        "region": "US · global",
+        "oneLineEdge": "Radar blocks fraud in <100 ms across billions of network transactions.",
+        "whatTheyAutomated": "Fraud detection. Payment authorization. Adaptive rules. Payment success rate optimization.",
+        "howTheyUseAI": "A multi-head neural classifier on top of cross-network signals. Adaptive rules combine the ML score with issuer responses. Real-time scoring on every transaction.",
+        "leadVsCompetitors": "Radar customers see 32% less fraud on average. The new multi-head model adds another 30% on top. +1.3 pp to payment success rate. SEPA fraud −42%, ACH −20%."
+      },
+      {
+        "name": "Uber",
+        "industry": "Ride-share · marketplace",
+        "region": "US · global",
+        "oneLineEdge": "DeepETA returns an arrival prediction in ~3 ms — across 30M matches per minute.",
+        "whatTheyAutomated": "ETA computation, driver–rider matching, dynamic pricing, routing, trip moderation.",
+        "howTheyUseAI": "Self-attention deep learning sits on top of the routing engine to predict the gap between estimated and real arrival time. Tree-based ensembles match trips on 1,000+ features.",
+        "leadVsCompetitors": "Median latency 3.25 ms, p95 4 ms. Over 30M match-pair predictions per minute. Trained on 1.4B historical queries. Sharper ETAs cut cancellations and raise marketplace margin."
+      },
+      {
+        "name": "Booking.com",
+        "industry": "OTA · hospitality",
+        "region": "Netherlands · global",
+        "oneLineEdge": "ML ranks 1.5M properties personally for every guest.",
+        "whatTheyAutomated": "Search ranking, personalized recommendations, dynamic pricing, support, and trip planning via the GenAI Trip Planner.",
+        "howTheyUseAI": "A multi-stage ensemble of ML models (pCTR, pCVR, perceived quality). Personal relevance by date, passport, group composition. An LLM trip planner on top of OpenAI.",
+        "leadVsCompetitors": "About 150 ML models in production. 1.5M properties and 125M reviews as a training pool. No other OTA personalizes property position per search at this scale."
+      },
+      {
+        "name": "Duolingo",
+        "industry": "EdTech · SaaS",
+        "region": "US · global",
+        "oneLineEdge": "GPT-4 explains mistakes and runs role-play conversations — Max tier at $30/month.",
+        "whatTheyAutomated": "Mistake explanations (Explain My Answer), role-plays, AI-character video calls, lesson generation.",
+        "howTheyUseAI": "GPT-4 sits on top of Duolingo's product layer with curated prompts, safety filters, and per-learner difficulty.",
+        "leadVsCompetitors": "DAU 34.1M (+59% YoY in Q2 2024). Revenue +41% to $178M. Max-tier reached ~5% of subscribers right after launch. +15% completion rate among Explain My Answer users."
+      },
+      {
+        "name": "Revolut",
+        "industry": "Fintech · neobank",
+        "region": "UK · global",
+        "oneLineEdge": "Account opening in ~6 minutes vs. days at a bank. AI fraud detection across billions of transactions.",
+        "whatTheyAutomated": "Onboarding and KYC over the phone. Anti-fraud and scam detection. Biometrics (Face ID + selfie). Chat support.",
+        "howTheyUseAI": "ML reads the context around transactions and messages: it spots and blocks the «met someone online → money to a stranger → asked for a code» pattern before the transfer goes through. Biometric models verify the face.",
+        "leadVsCompetitors": "50M+ customers globally. AI scam detection has stopped tens of millions of pounds in fraudulent transfers. Valuation around $45B — higher than many traditional banks where opening an account still takes weeks."
+      }
+    ],
+    "closing": {
+      "kicker": "The trend is here",
+      "title": "They pulled ahead because they started early. It's not magic — it's your turn now.",
+      "body": "They already measure payback in hours. You still measure it in quarterly Excel reports. The gap isn't budgets or geniuses — it's that they stopped doing by hand what machines have done for years. You can change that in 3 months, starting with a single painful process.",
+      "cta": "Start with a free audit"
+    }
+  },
   "pain": {
     "eyebrow": "Pains",
     "title": "Sound familiar?",
     "items": [
       {
-        "title": "Days lost to copy-paste",
-        "body": "Your team moves data between systems by hand, fills out reports, types the same thing into three places. Hours that should have been decisions."
+        "title": "Half the day lost to copy-paste",
+        "body": "A manager moves an order from email into CRM, then into inventory, then into a report. Every single day, on loop. Then we wonder why no one has time to think."
       },
       {
-        "title": "Lead arrives at 10pm — gone by 10:05",
-        "body": "Without instant response, conversion collapses. You pay for traffic, reply next day — and lose the money twice."
+        "title": "Lead messages at 10pm. By 10:05 they're with a competitor",
+        "body": "By the time you reply in the morning, they've already signed with whoever answered first. Ad budget — gone. Lead — gone. Twice."
       },
       {
-        "title": "Four systems, four versions of the truth",
-        "body": "CRM, inventory, accounting, marketing — each with its own numbers. Every report is assembled by hand, errors compound, the team argues instead of working."
+        "title": "Everyone has their own number. No one is right",
+        "body": "CRM says one thing, inventory another, accounting a third. The meeting starts with «well, in my spreadsheet…». Half a day on reconciling, zero on actual work."
       },
       {
-        "title": "Revenue grows — payroll grows in lockstep",
-        "body": "Without automation, every new dollar of revenue costs almost as much as the last. Hiring, training, churn. The business scales on your nerves."
+        "title": "Want more revenue — hire more people",
+        "body": "More clients — more managers. More managers — more chaos: hiring, training, churn. Revenue goes up, you burn out."
       }
     ],
-    "answer": "We come in, map the processes and tell you straight: automate fully, automate partially, or don't bother. No fluff, no upsell."
+    "answer": "We'll look at your processes. We'll tell you straight: what to automate now, what later, what not to touch at all. No upsell."
   },
   "approach": {
     "eyebrow": "Approach",
     "title": "We don't sell boxes",
-    "lead": "Every business is unique. So is the solution that fits it. We don't repackage SaaS, we don't bend your processes around someone else's template. We build around your operating logic — otherwise the automation simply won't take root.",
+    "lead": "We don't repackage SaaS, we don't bend your processes around someone else's template. Every project is built around your operating logic. But after 8+ months in production and dozens of scenarios, we have working patterns: what sticks in HoReCa, what sticks in e-commerce, what sticks in B2B. We adapt them to your case.",
     "principles": [
       {
         "kicker": "Principle 01",
@@ -90,84 +203,81 @@
         "body": "We don't talk you into automating for the invoice. Sometimes the right answer is \"leave it to the humans.\" We'll say it honestly and explain why."
       }
     ],
+    "bridge": "Unique doesn't mean «from scratch every time». We have patterns — they adapt, they don't get stamped out. So below isn't a service catalog — it's the areas where we already know how to do the ROI math.",
     "tagline": "Unique problem → unique solution"
   },
   "services": {
     "eyebrow": "What we do",
-    "title": "We automate knowledge work",
-    "lead": "Fully or partially — any repeatable process where a human does what machines have done for years. The hard part isn't \"how\" — it's \"what's actually worth automating\". That's where we come in.",
-    "selectorTitle": "Pick your niche",
-    "selectorHint": "We'll show what's worth automating first",
-    "individualNote": "The exact set and stack are tailored to your processes — these are just typical scenarios",
+    "title": "Six areas where the patterns are already there",
+    "lead": "This isn't a service catalog. It's six areas where we have working solutions and a sense of how they pay back. The exact set, stack and logic — we tailor to your business.",
+    "framing": "What we see most often in these niches",
+    "selectorTitle": "Which area are you in?",
+    "selectorHint": "We'll show the patterns we've already shipped — and where they paid back first",
+    "individualNote": "The exact set and stack are tailored to your processes. These aren't packages — they're starting points for the conversation.",
     "niches": [
       {
         "id": "horeca",
         "label": "Restaurant · HoReCa",
-        "summary": "Orders, bookings, supplies and analytics — no managers on the phone.",
+        "summary": "Orders, bookings, supplies and analytics — no managers on the phone. Typically takes out 60–80% of inbound calls.",
         "items": [
           "Order intake via WhatsApp/Telegram, auto-saved to POS",
           "Table reservations with confirmations and reminders",
-          "Auto-reports on revenue, average check and bestselling items",
           "Stock control, auto-purchase orders to suppliers, demand forecast"
         ]
       },
       {
         "id": "ecom",
         "label": "E-commerce · shop",
-        "summary": "Listings, support and inventory running themselves 24/7.",
+        "summary": "Listings, support and inventory running themselves 24/7. One person handles a catalog that used to need a team.",
         "items": [
           "AI consultant on site: helps pick the product and closes the sale",
           "Auto-generated product cards, descriptions and SEO across the catalog",
-          "Sync inventory ↔ marketplaces ↔ CRM in real time",
-          "Behavior-triggered emails and abandoned cart recovery"
+          "Sync inventory ↔ marketplaces ↔ CRM in real time"
         ]
       },
       {
         "id": "agency",
         "label": "Agency · services",
-        "summary": "Lead gen, qualification and client onboarding on autopilot.",
+        "summary": "Lead gen, qualification and client onboarding on autopilot. Account managers only deal with warm leads.",
         "items": [
           "AI qualifies inbound: the bot asks about budget and scope on its own",
           "Auto-generated proposals and contracts from CRM templates",
-          "Client reports: metrics, screenshots, status — weekly, hands-off",
-          "Employee onboarding: checklists, access, training in a Telegram bot"
+          "Client reports: metrics, screenshots, status — weekly, hands-off"
         ]
       },
       {
         "id": "manufacturing",
         "label": "Manufacturing",
-        "summary": "Documents, requests, QC and plan-vs-actual without paper.",
+        "summary": "Documents, requests, QC and plan-vs-actual without paper or double bookkeeping.",
         "items": [
           "Material and purchase requests: routing, approvals, deadlines",
-          "Digital document workflow: incoming, outgoing, executor tracking",
-          "Shop floor dashboards: plan-vs-actual, downtime, root causes — live",
-          "Photo-based QC with AI: defects caught on the line"
+          "Digital document workflow: −90% time on approvals (our case)",
+          "Photo-based QC with AI: defects caught right on the line"
         ]
       },
       {
         "id": "realestate",
         "label": "Real estate",
-        "summary": "Leads, viewings and deals — faster than the competing agent.",
+        "summary": "Leads, viewings and deals — faster than the competing agent. AI replies to a listing in 30 seconds.",
         "items": [
           "AI bot on listings: qualifies leads and books a viewing in 30 sec",
           "Auto-matching properties to client requests across all sources",
-          "Pipeline reminders and follow-ups: nothing falls through the cracks",
-          "One-click property decks and deal document packs"
+          "Pipeline reminders and follow-ups: nothing falls through the cracks"
         ]
       },
       {
         "id": "b2b",
         "label": "B2B · services · SaaS",
-        "summary": "Funnel, billing, support and onboarding on a conveyor.",
+        "summary": "Funnel, billing, support and onboarding on a conveyor. Revenue grows without payroll growing.",
         "items": [
           "AI sales agent: qualifies, books demos, drafts proposals",
           "Billing + CRM + support stitched into a single client record",
-          "Auto-onboarding for new clients: emails, access, training flows",
           "Support conversation analysis: what breaks, what's missing in the product"
         ]
       }
     ],
-    "ctaHint": "Don't see your niche? Describe the task — we'll figure it out."
+    "ctaHint": "Don't see your niche? Describe the task — we'll figure it out.",
+    "bottomCta": "Not sure if it fits — let's spend 30 minutes on it"
   },
   "case": {
     "eyebrow": "Case",
@@ -197,25 +307,34 @@
   },
   "process": {
     "eyebrow": "How we work",
-    "title": "Four steps — no surprises",
+    "title": "Four stages. After each — an artifact and a go/no-go decision.",
     "steps": [
       {
         "title": "Discovery & audit",
-        "body": "We get on a call and dig into your processes — no templates, no canned answers. You get a process map and the spots where automation actually pays off in your specific case."
+        "duration": "30-min call + 1–3 days of analysis",
+        "output": "Process map and 2–3 spots with ROI math",
+        "body": "We get on a call and dig into your processes — no templates, no canned answers. You walk away knowing where automation pays off in your case, and where it doesn't."
       },
       {
         "title": "Prototype on your logic",
-        "body": "We build a minimal working version on your real data and scenarios. You see the impact on concrete cases before signing the bigger scope."
+        "duration": "1–3 weeks",
+        "output": "Working prototype on your real data",
+        "body": "We build a minimal working version on your real data and scenarios. You see the impact on concrete cases — before signing the bigger scope."
       },
       {
         "title": "Rollout",
-        "body": "We scale the prototype, integrate with existing systems, train the team, and document everything."
+        "duration": "2–12 weeks",
+        "output": "Deployed system + documentation + trained team",
+        "body": "We scale the prototype, integrate with existing systems, train the team, and document everything. Access — yours from day one."
       },
       {
         "title": "Support",
-        "body": "We monitor stability, adjust to process changes, and add new scenarios on demand."
+        "duration": "Monthly or quarterly",
+        "output": "SLA, monitoring, new scenarios on demand",
+        "body": "We monitor stability, adjust to process changes, and add new scenarios. Walking away from us is painless — the stack is open, not proprietary."
       }
-    ]
+    ],
+    "guarantee": "Between stages there's a kill switch. We don't move forward until you've seen the result of the previous one."
   },
   "team": {
     "eyebrow": "Team",
@@ -244,34 +363,35 @@
     "title": "Common questions",
     "items": [
       {
-        "q": "Do you have a ready-made solution for my task?",
-        "a": "No — by design. We don't sell boxes. Every build is assembled around a specific business: your processes, your stack, your people. That's why it actually takes root, instead of \"only working in ideal conditions\"."
+        "q": "We tried automation before — got burned. What's different here?",
+        "a": "Most failures come from \"the box\", not from the tech. We don't go into a big rollout without a prototype. 1–3 weeks, on your data, on your scenarios — if there's no impact, we don't move forward. You pay per stage, with a kill switch between them."
       },
       {
-        "q": "How much does it cost?",
-        "a": "Depends on scope and complexity — every solution is custom. After the audit we name a range in EUR / AED for a specific scope. You pay either fixed or per milestone."
+        "q": "What if the AI bot tells a customer something dumb or hallucinated — who's on the hook?",
+        "a": "The cost of an error decides the architecture. For customer-facing flows — RAG over your data, explicit guardrails, escalation to a human. Where hallucination is expensive, we don't use AI at all — we go deterministic."
       },
       {
-        "q": "What about data security?",
-        "a": "By default client data never leaves their infrastructure. AI models and integrations are deployed inside your perimeter when policy requires it."
+        "q": "What about privacy? We have NDA, GDPR, internal policies.",
+        "a": "By default we deploy inside your perimeter — data doesn't leave. We sign NDA. AI models can run locally or via private endpoints (Azure OpenAI, AWS Bedrock, on-prem)."
       },
       {
-        "q": "How fast can you launch?",
-        "a": "A simple bot — 1–2 weeks. Integrations — 2–4 weeks. Document-workflow-grade automation — 2–3 months to full rollout."
+        "q": "What if you disappear after the launch? We'll be left with a broken system.",
+        "a": "Documentation and access — yours from day one. We pick a stack your future engineer can pick up — n8n, Python, not our proprietary language. Support SLA is fixed. Walking away from us painlessly is a deliberate design choice."
       },
       {
-        "q": "What if something breaks?",
-        "a": "Support is included. Same business-day response, critical incidents prioritized. Every scenario is monitored."
+        "q": "How do we migrate from an old CRM or system without downtime?",
+        "a": "Parallel run for 2–4 weeks: the new process runs alongside the old one until we're confident no data is lost and reporting isn't broken. Only then — the cutover."
       },
       {
-        "q": "Which industries do you work with?",
-        "a": "Public sector, services, e-commerce, agencies, SaaS, manufacturing, real estate. We take a project on if we see automation will actually pay back — otherwise we'll say no ourselves."
+        "q": "How much does it cost and how do we calculate ROI before signing?",
+        "a": "After the 30-minute audit — a range in EUR or AED for a defined scope, plus an ROI calculation (hours × loaded rate). Payment per stage. If the math doesn't add up, we don't sign."
       },
       {
-        "q": "Do I need a long-term contract?",
-        "a": "No. We can work on a single project or a monthly support retainer. No minimum commitment."
+        "q": "Does this fit our size or industry?",
+        "a": "We work with SMB plus public sector. For micro (under 5 people) we often talk you out of it — the math doesn't work. If your case isn't ours — we'll say so and point you at someone who'll do it better."
       }
-    ]
+    ],
+    "contact": "Question not on the list — message us on Telegram @Magicworkpro, no form needed."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -292,7 +412,8 @@
     "alternatives": {
       "telegram": "@Magicworkpro",
       "email": "golodbizai@gmail.com"
-    }
+    },
+    "emailCopied": "Copied"
   },
   "footer": {
     "tagline": "Business process automation · Dubai",

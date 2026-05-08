@@ -74,12 +74,22 @@ export function Hero() {
           {t("subhead")}
         </motion.p>
 
+        <motion.p
+          initial="initial"
+          animate="animate"
+          variants={reveal}
+          transition={{ duration: 0.7, delay: 0.32, ease }}
+          className="font-mono text-[11px] uppercase tracking-[0.16em] text-text-subtle"
+        >
+          {t("proofLine")}
+        </motion.p>
+
         <motion.div
           initial="initial"
           animate="animate"
           variants={reveal}
           transition={{ duration: 0.7, delay: 0.4, ease }}
-          className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
+          className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
         >
           <a
             href="#contact"
@@ -93,6 +103,15 @@ export function Hero() {
             className="inline-flex h-[52px] items-center justify-center gap-2 rounded-md border border-border-strong bg-white px-7 text-[15px] font-medium text-text transition-colors hover:border-accent hover:text-accent"
           >
             {t("secondaryCta")}
+          </a>
+          <a
+            href="#contact"
+            className="group inline-flex h-[52px] items-center gap-2 px-2 text-[14px] font-medium text-text-muted transition-colors hover:text-accent"
+          >
+            <span className="border-b border-dashed border-border-strong pb-0.5 transition-colors group-hover:border-accent">
+              {t("tertiaryCta")}
+            </span>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </a>
         </motion.div>
 

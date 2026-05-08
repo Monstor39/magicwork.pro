@@ -30,6 +30,7 @@ export function Header() {
   }, [open]);
 
   const links: Array<{ id: string; label: string }> = [
+    { id: "ai-leaders", label: t("aiLeaders") },
     { id: "services", label: t("services") },
     { id: "approach", label: t("approach") },
     { id: "case", label: t("cases") },

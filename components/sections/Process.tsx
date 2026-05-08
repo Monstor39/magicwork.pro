@@ -2,10 +2,16 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
+import { ShieldCheck } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-type Step = { title: string; body: string };
+type Step = {
+  title: string;
+  body: string;
+  duration: string;
+  output: string;
+};
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -28,7 +34,7 @@ export function Process() {
     <Section id="process">
       <div className="flex flex-col gap-3">
         <Eyebrow>{t("eyebrow")}</Eyebrow>
-        <h2 className="max-w-2xl text-balance text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-[44px]">
+        <h2 className="max-w-3xl text-balance text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-[44px]">
           {t("title")}
         </h2>
       </div>
@@ -48,11 +54,32 @@ export function Process() {
                 <span className="hidden h-px flex-1 bg-gradient-to-r from-accent/40 via-accent/15 to-transparent lg:block" />
               )}
             </div>
-            <h3 className="text-[16px] font-semibold tracking-tight text-text">{step.title}</h3>
+            <div className="flex flex-col gap-1.5">
+              <h3 className="text-[16px] font-semibold tracking-tight text-text">{step.title}</h3>
+              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-text-subtle">
+                {step.duration}
+              </span>
+            </div>
             <p className="text-[13px] leading-relaxed text-text-muted">{step.body}</p>
+            <div className="mt-auto flex flex-col gap-1 border-t border-border pt-4">
+              <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">
+                →
+              </span>
+              <p className="text-[12.5px] font-medium leading-snug text-text">{step.output}</p>
+            </div>
           </motion.li>
         ))}
       </ol>
+
+      <motion.div
+        {...reveal(0.2)}
+        className="mt-8 flex items-start gap-3 rounded-2xl border border-accent/30 bg-accent/5 p-5 sm:items-center sm:p-6"
+      >
+        <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+          <ShieldCheck className="h-4 w-4" />
+        </span>
+        <p className="text-[14px] leading-relaxed text-text">{t("guarantee")}</p>
+      </motion.div>
     </Section>
   );
 }

@@ -73,6 +73,13 @@ export function Approach() {
           ))}
         </ol>
       </div>
+
+      <motion.p
+        {...reveal(0.3)}
+        className="mx-auto mt-12 max-w-3xl text-balance text-center text-[15px] leading-relaxed text-text-muted lg:mt-16"
+      >
+        {t("bridge")}
+      </motion.p>
     </Section>
   );
 }

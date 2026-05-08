@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Plus, MessageCircle } from "lucide-react";
 import { useId, useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -17,14 +17,15 @@ export function Faq() {
 
   return (
     <Section id="faq" tone="deep">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
-        <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-10">
+        <div className="flex max-w-3xl flex-col gap-3">
           <Eyebrow>{t("eyebrow")}</Eyebrow>
           <h2 className="text-balance text-[34px] font-semibold leading-[1.05] tracking-tight sm:text-[44px]">
             {t("title")}
           </h2>
         </div>
 
+        <div className="flex flex-col gap-5">
         <ul className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white elev-card">
           {items.map((item, i) => {
             const isOpen = open === i;
@@ -81,6 +82,15 @@ export function Faq() {
             );
           })}
         </ul>
+
+          <a
+            href="#contact"
+            className="group inline-flex items-start gap-2.5 self-start rounded-xl border border-border bg-white px-4 py-3 text-[13px] text-text-muted transition-colors hover:border-accent/40 hover:text-accent"
+          >
+            <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
+            <span>{t("contact")}</span>
+          </a>
+        </div>
       </div>
     </Section>
   );

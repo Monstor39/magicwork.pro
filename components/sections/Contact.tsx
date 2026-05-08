@@ -2,18 +2,35 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Mail, Send } from "lucide-react";
+import { ArrowRight, Check, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+const EMAIL = "golodbizai@gmail.com";
+
 export function Contact() {
   const t = useTranslations("contact");
   const locale = useLocale();
   const [status, setStatus] = useState<Status>("idle");
+  const [emailCopied, setEmailCopied] = useState(false);
   const reduced = useReducedMotion();
+
+  const onEmailClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(EMAIL);
+      } catch {
+        // ignore — fall through to mailto
+      }
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,14 +93,27 @@ export function Contact() {
               <ArrowRight className="ml-auto h-4 w-4 text-text-muted transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href="mailto:golodbizai@gmail.com"
+              href={`mailto:${EMAIL}`}
+              onClick={onEmailClick}
               className="group inline-flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-3 elev-card transition-all hover:-translate-y-0.5 hover:border-accent hover:elev-card-hover"
+              aria-label={emailCopied ? "Email copied" : `Email: ${EMAIL}`}
             >
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-accent to-blue text-white">
                 <Mail className="h-4 w-4" />
               </span>
               <span className="font-mono text-[14px] text-text">{t("alternatives.email")}</span>
-              <ArrowRight className="ml-auto h-4 w-4 text-text-muted transition-transform group-hover:translate-x-0.5" />
+              <span className="ml-auto flex items-center gap-2">
+                {emailCopied && (
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-success">
+                    {t("emailCopied")}
+                  </span>
+                )}
+                {emailCopied ? (
+                  <Check className="h-4 w-4 text-success" />
+                ) : (
+                  <ArrowRight className="h-4 w-4 text-text-muted transition-transform group-hover:translate-x-0.5" />
+                )}
+              </span>
             </a>
           </div>
         </div>
