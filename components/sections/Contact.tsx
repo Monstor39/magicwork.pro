@@ -45,6 +45,8 @@ export function Contact() {
     }
 
     setStatus("submitting");
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
     try {
       const tgToken = process.env.NEXT_PUBLIC_TG_BOT_TOKEN;
       const tgChat = process.env.NEXT_PUBLIC_TG_CHAT_ID;
@@ -83,11 +85,14 @@ export function Contact() {
           text,
           disable_web_page_preview: true,
         }),
+        signal: controller.signal,
       });
+      clearTimeout(timeoutId);
       if (!res.ok) throw new Error("submit failed");
       setStatus("success");
       form.reset();
     } catch {
+      clearTimeout(timeoutId);
       setStatus("error");
     }
   };
