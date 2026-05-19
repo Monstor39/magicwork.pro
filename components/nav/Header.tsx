@@ -30,11 +30,12 @@ export function Header() {
   }, [open]);
 
   const links: Array<{ id: string; label: string }> = [
+    { id: "approach", label: t("approach") },
     { id: "ai-leaders", label: t("aiLeaders") },
     { id: "services", label: t("services") },
-    { id: "approach", label: t("approach") },
     { id: "case", label: t("cases") },
     { id: "process", label: t("process") },
+    { id: "guarantees", label: t("guarantees") },
     { id: "team", label: t("team") },
     { id: "faq", label: t("faq") },
     { id: "contact", label: t("contact") },
@@ -65,7 +66,7 @@ export function Header() {
           <LangSwitch />
           <a
             href="#contact"
-            className="hidden h-9 items-center rounded-md bg-accent px-4 text-[13px] font-medium text-white elev-cta transition-all hover:bg-accent-light sm:inline-flex"
+            className="hidden h-9 items-center whitespace-nowrap rounded-md bg-accent px-4 text-[13px] font-medium text-white elev-cta transition-all hover:bg-accent-light sm:inline-flex"
           >
             {t("cta")}
           </a>

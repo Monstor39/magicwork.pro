@@ -74,7 +74,3 @@ In CI the secrets come from GitHub Actions: `TG_BOT_TOKEN`, `TG_CHAT_ID` (set in
 - Reusable elevation classes are defined in `globals.css`: `.elev-card`, `.elev-card-hover`, `.elev-cta`. Prefer these over hand-rolled `shadow-*` stacks for consistency.
 - Animations use `framer-motion` with shared ease `[0.22, 1, 0.36, 1]` and the fade-up reveal `{opacity:0, y:16} → {opacity:1, y:0}` triggered via `whileInView` + `viewport={{ once: true, margin: "-80px" }}`. Always gate with `useReducedMotion()` for any motion that's not load-time hero choreography. CSS `prefers-reduced-motion` is also handled globally in `globals.css`.
 - The brand mark in `components/ui/Logo.tsx` uses an inline SVG with a SMIL `animateTransform` shimmer on the inner `AI` text gradient. SMIL stays even with `prefers-reduced-motion` (intentional: it's a slow, soft glow, not movement).
-
-### Static assets
-
-`public/business-card.html` is a self-contained, printable 85×55 mm business card (front RU, back EN) styled to match the site. It pulls Google Fonts (Inter / JetBrains Mono / Fraunces) over the network and uses `@page` rules — open at `/business-card.html` and print to PDF. It has no relationship to the rest of the app.

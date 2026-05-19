@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
@@ -50,12 +51,29 @@ export function PainPoints() {
         ))}
       </div>
 
-      <motion.p
+      <motion.div
         {...reveal(0.2)}
-        className="mt-10 max-w-2xl rounded-xl border border-accent/30 bg-accent/10 p-6 text-[16px] leading-relaxed text-text"
+        className="mt-10 flex max-w-2xl flex-col gap-5 rounded-xl border border-accent/30 bg-accent/10 p-6"
       >
-        {t("answer")}
-      </motion.p>
+        <p className="text-[16px] leading-relaxed text-text">{t("answer")}</p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <a
+            href="#wizard"
+            className="group inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-[14px] font-medium text-white elev-cta transition-all hover:bg-accent-light"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            {t("ctaPrimary")}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-medium text-text-muted transition-colors hover:text-accent"
+          >
+            {t("ctaSecondary")}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </motion.div>
     </Section>
   );
 }

@@ -1,26 +1,26 @@
 {
   "nav": {
-    "services": "What we do",
+    "services": "Services",
     "approach": "Approach",
     "cases": "Cases",
     "process": "Process",
+    "guarantees": "Guarantees",
     "team": "Team",
     "faq": "FAQ",
     "contact": "Contact",
-    "aiLeaders": "Leaders",
+    "aiLeaders": "The trend",
     "cta": "Free audit"
   },
   "hero": {
     "eyebrow": "Magic · Work · Pro",
-    "headlinePart1": "We automate",
-    "headlineAccent": "business processes",
-    "headlinePart2": "so they run without you in the room",
-    "subhead": "We map your processes, run the ROI numbers, and build around your logic — not boxed software. Won't pay back — we'll say so ourselves and pass.",
-    "proofLine": "8 months in production · Dubai & worldwide · n8n / Make / Python / AI",
+    "headlinePart1": "We embed",
+    "headlineAccent": "AI employees",
+    "headlinePart2": "into sales, support and ops — built around your processes",
+    "subhead": "30-minute audit → in 48 hours, a map of 5 spots where AI pays back in 3 months. No hype, no boxes. Won't pay back — we'll say so ourselves and pass.",
+    "proofLine": "Dubai · 8 months in real production · dozens of automations",
     "primaryCta": "Free 30-minute audit",
-    "secondaryCta": "See the case: −90% in 3 months",
-    "tertiaryCta": "Ask what to automate first",
-    "trustLine": "Document workflow · city administration · −90% time · in production",
+    "secondaryCta": "See the 60-sec demo",
+    "trustLine": "Hands-on · you talk to the people writing the code · access from day one",
     "spotsOpen": "Open to new projects",
     "tagIndividual": "Tailored to every business",
     "tiles": {
@@ -45,14 +45,14 @@
         "day3": "Fri",
         "day4": "Sun"
       },
-      "badge1": "AI agent",
+      "badge1": "AI employee",
       "badge2": "No-touch"
     }
   },
   "aiLeaders": {
     "eyebrow": "Leaders",
     "title": "They pulled ahead. It's not magic — it's AI and automation.",
-    "lead": "Ten companies that didn't just adopt the tech — they used it to break away from competitors. Sometimes it's AI, sometimes it's plain old robots and scripts. The common thread: they stopped doing repetitive work by hand a long time ago.",
+    "lead": "Ten companies that didn't just adopt the tech — they used it to break away from competitors. Their budgets run into billions, yours into thousands. That's fine: don't watch the numbers, watch the pattern. They stopped doing repetitive work by hand long ago — and your slice of that logic can ship in weeks, not years.",
     "labels": {
       "industry": "Industry",
       "region": "Region",
@@ -154,10 +154,195 @@
     ],
     "closing": {
       "kicker": "The trend is here",
-      "title": "They pulled ahead because they started early. It's not magic — it's your turn now.",
-      "body": "They already measure payback in hours. You still measure it in quarterly Excel reports. The gap isn't budgets or geniuses — it's that they stopped doing by hand what machines have done for years. You can change that in 3 months, starting with a single painful process.",
-      "cta": "Start with a free audit"
+      "title": "They pulled ahead because they started early. Your turn now — at your own scale.",
+      "body": "The gap isn't budgets or geniuses — it's that they stopped doing by hand what machines have done for years. Next up — six areas where we already have proven payback patterns for small and mid-size business.",
+      "cta": "See what we do"
     }
+  },
+  "wizard": {
+    "eyebrow": "Demo · try it",
+    "title": "Danila · MagicWork AI demo",
+    "subtitle": "In 60 seconds I'll show you what's worth automating in your business. This isn't real GPT — it's a demo: 4 questions, I return a personal recommendation. The exact plan comes from the free audit.",
+    "botName": "Danila",
+    "botRole": "AI demo · MagicWork founder",
+    "intro": "Hi 👋 This is Danila, founder of MagicWork — well, my AI demo. In 60 seconds I'll show you what to automate first in your business — no budget talk, no jargon. Shall we?",
+    "start": "Let's go",
+    "restart": "Run it again",
+    "back": "← Back",
+    "thinking": "Thinking…",
+    "youLabel": "You",
+    "stepCounter": "Step {n} of 4",
+    "step1": {
+      "q": "First — what kind of business do you run?",
+      "options": [
+        { "id": "horeca", "label": "Restaurant, cafe, delivery" },
+        { "id": "ecom", "label": "E-commerce, online retail" },
+        { "id": "agency", "label": "Agency, services, consulting" },
+        { "id": "manufacturing", "label": "Manufacturing" },
+        { "id": "realestate", "label": "Real estate, brokerage" },
+        { "id": "b2bsaas", "label": "B2B / SaaS" },
+        { "id": "clinic", "label": "Clinic, dental, wellness" },
+        { "id": "beauty", "label": "Salon, barbershop, gym" },
+        { "id": "legal", "label": "Law firm, notary" },
+        { "id": "education", "label": "Education, online courses" },
+        { "id": "logistics", "label": "Logistics, freight, travel" },
+        { "id": "construction", "label": "Construction, fit-out, interior" },
+        { "id": "hr", "label": "HR, recruiting" },
+        { "id": "auto", "label": "Auto service, dealership" },
+        { "id": "other", "label": "Other / didn't fit" }
+      ]
+    },
+    "step2": {
+      "q": "Where do you lose the most time right now?",
+      "options": [
+        { "id": "leads", "label": "Inbound leads and calls — can't reply fast enough" },
+        { "id": "docs", "label": "Documents, reports, approvals" },
+        { "id": "ops", "label": "Repetitive tasks across the team" },
+        { "id": "support", "label": "Customer support and follow-ups" }
+      ]
+    },
+    "step3": {
+      "q": "How big is your team?",
+      "options": [
+        { "id": "micro", "label": "1–5 people" },
+        { "id": "small", "label": "5–20" },
+        { "id": "medium", "label": "20–50" },
+        { "id": "large", "label": "50+" }
+      ]
+    },
+    "step4": {
+      "q": "When would you like to launch automation at your company?",
+      "options": [
+        { "id": "asap", "label": "Yesterday — something is on fire" },
+        { "id": "soon", "label": "Within the next 1–3 months" },
+        { "id": "research", "label": "Just researching the market for now" }
+      ]
+    },
+    "preview": {
+      "preface": "Okay, here's what I see for you:",
+      "ask": "Want me to send the full recommendation and payback math? Drop a contact — Danila from MagicWork will reach out within 24 hours.",
+      "skipLabel": "Just show me the recommendation, skip contact",
+      "submitLabel": "Send and get the math"
+    },
+    "contact": {
+      "title": "Where should I send it?",
+      "subtitle": "Name and any channel that works — Telegram, email or phone. We'll write where it's easiest for you.",
+      "nameLabel": "Your name",
+      "contactLabel": "@username, email or phone",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "success": "Got it. Danila will reach out within 24 hours with the full math.",
+      "error": "Something broke. Message us on Telegram directly — link below."
+    },
+    "result": {
+      "title": "What I'd automate first at your place",
+      "ctaTitle": "Want the precise math?",
+      "ctaBody": "30 minutes on a free audit (Zoom or face-to-face in Dubai Marina), we map your processes and compute payback in hours × loaded rate. In 48 hours — a PDF with the plan, yours to keep.",
+      "ctaButton": "Book a free audit",
+      "askHuman": "Talk to a human on Telegram",
+      "copyResult": "Copy the recommendation",
+      "copied": "Copied",
+      "disclaimer": "Simplified recommendation based on typical patterns. We get specific on the audit."
+    },
+    "recs": {
+      "horeca_leads": "Evening reservations slip away while your host is busy — the guest just walks to the place next door. An AI assistant in WhatsApp takes the booking in 30 seconds, writes it to your POS, and sends reminders. Recovers 60–80% of missed calls. Payback in 2–3 months.",
+      "horeca_docs": "Supplier orders, invoices, shift sheets — your manager loses 2–3 hours a day on paperwork instead of guests. The AI assistant reads invoice photos, matches them against orders, posts to your accounting, and builds shift reports. Saves 40–50 hours per month. Payback in 3 months.",
+      "horeca_ops": "The bar runs out of truffle oil — and you learn about it from a guest mid-service. The AI assistant tracks stock from receipts, sends your buyer a daily 'order today' list, and warns the chef about expiry. Cuts the stop-list 2–3x. Payback in 3–4 months.",
+      "horeca_support": "Guests message Instagram and WhatsApp at 11 PM — 'vegan options?', 'dogs allowed?', 'parking?'. The AI assistant answers 80% instantly and hands tougher ones to your manager in the morning. Chat-to-booking conversion up 25–35%. Payback in 2 months.",
+      "ecom_leads": "Out of 100 visitors, 1–2 buy — the rest 'think it over' and never come back. The AI assistant messages cart-abandoners on WhatsApp, handles objections, and closes the order in chat. Recovers 15–25% of abandoned carts. Payback in 2 months.",
+      "ecom_docs": "Invoices, shipments, returns, labeling — your accountant drowns in spreadsheets and loses days reconciling. The AI assistant pulls invoices from email, posts them to your accounting, and prepares closing docs for clients. Saves 60–80 hours per month. Payback in 3 months.",
+      "ecom_ops": "An order comes in — the warehouse learns about it an hour later, the courier two, the customer is in the dark until evening. The AI assistant routes it to the warehouse, assigns a courier, and sends the customer a tracking number automatically. Fulfillment time -40%, errors -60%. Payback in 3 months.",
+      "ecom_support": "'Where's my order?' — 60% of all support requests, eating 5 minutes per ticket. The AI assistant reads order status from your CRM, replies in WhatsApp/Telegram in 10 seconds, and escalates only the real problems. Cuts support load 70%. Payback in 2 months.",
+      "agency_leads": "Leads come from your site, Instagram, referrals — your manager only calls back a third of them, the rest go cold. The AI assistant messages within the first minute, qualifies by budget and need, and books a call. Lead-to-call conversion +40%. Payback in 2–3 months.",
+      "agency_docs": "Contract, proposal, brief, act — your PM cobbles them together from templates, losing 6–8 hours a week. From a single chat conversation, the AI assistant assembles the contract and proposal on your template, fills in client details, and sends for signing. Frees 30+ hours per month per PM. Payback in 2 months.",
+      "agency_ops": "Client tasks are scattered — some in Asana, some in chat, deadlines slip. The AI assistant pulls client requests from chat, routes them to the right project, and nudges the team on deadlines. Missed deadlines -50%. Payback in 3 months.",
+      "agency_support": "A client asks 'how's our reel coming?' at 9 PM — your manager replies in the morning and trust erodes. The AI assistant knows the status of every project, replies instantly, and escalates only what matters. Client retention +20–25%. Payback in 3 months.",
+      "manufacturing_leads": "Inquiries arrive by email and through your site — your sales rep handles them in 1–2 days while the prospect goes to competitors. The AI assistant captures the request, clarifies the spec, builds a rough estimate from your price list, and hands sales a warm lead. Conversion +30%. Payback in 3 months.",
+      "manufacturing_docs": "Specs, waybills, invoices, customs forms — your docs team drowns and shipments get delayed. The AI assistant assembles the document package per order, checks it against the production task, and prepares everything for the client. Processing time -60%. Payback in 3–4 months.",
+      "manufacturing_ops": "An order comes in — the shop floor learns 2 days later, raw materials aren't bought, the deadline slips. The AI assistant pushes the order to production, checks raw-material stock, and triggers supplier requests. Missed deadlines -35–45%. Payback in 4 months.",
+      "manufacturing_support": "A client calls to check shipment status — your rep spends half an hour finding the answer and calls back later. The AI assistant sees production status and replies in WhatsApp instantly. Routine calls -60%, repeat orders +20%. Payback in 3 months.",
+      "realestate_leads": "70% of listing inquiries come in the evening when the agent is on a viewing. The AI assistant takes calls and chats 24/7, qualifies the buyer (budget, area, timeline), and books a viewing in the agent's calendar. Inquiry-to-viewing +40%. Payback in 2 months.",
+      "realestate_docs": "Lease agreement, handover act, inventory, statements — the agent loses 4–5 hours per deal. The AI assistant builds the package from templates tailored to client and property, then sends it for signature via DocuSign. Deal paperwork time -3x. Payback in 3 months.",
+      "realestate_ops": "Listings are scattered across spreadsheets, chats, and CRMs — the agent forgets which owner already approved a viewing. The AI assistant keeps listings in one place, nudges owners, and syncs with portals (Property Finder, Bayut, Dubizzle). Frees 15+ hours per week. Payback in 3 months.",
+      "realestate_support": "After closing, the client asks 'how do I pay utilities?', 'when's the handyman coming?' — the agent is busy, the client gets frustrated. The AI assistant answers post-deal questions from the property's knowledge base and escalates only real issues. NPS +25 points. Payback in 3 months.",
+      "b2bsaas_leads": "A B2B inbound lead waits 2–4 hours for a reply — by then they're cold and writing your competitor. The AI assistant replies within a minute, runs qualifying questions (team size, use case, budget), and books a demo on the right AE's calendar. Demo conversion +50%. Payback in 3 months.",
+      "b2bsaas_docs": "Contracts, NDAs, DPAs, invoices — legal and sales bounce files over email for weeks. The AI assistant builds the contract from a template using deal terms, fills in client data, and sends for signature. 'Verbal yes' to signature drops from 2 weeks to 2 days. Payback in 2 months.",
+      "b2bsaas_ops": "Onboarding a new client is a series of emails, guides, and videos the AE sends manually — half the clients don't open them. The AI assistant walks the client through each step in chat, answers questions, and escalates to CSM only when there's a real problem. Churn -15–20%. Payback in 4 months.",
+      "b2bsaas_support": "Support tickets scale with your customer base — hiring more agents is expensive. The AI assistant resolves 70% of routine tickets (password resets, billing, user invites) and hands the rest to a human. Saves 2 full-time support hires. Payback in 3 months.",
+      "clinic_leads": "In a clinic, 40% of bookings are lost because the front-desk admin is busy with a patient in person. The AI assistant takes bookings in WhatsApp, matches a doctor and slot, and confirms the first visit in 1 minute. Recovers 50–70% of missed inquiries. Payback in 2–3 months.",
+      "clinic_docs": "Consent forms, treatment agreements, discharge summaries — the admin spends 15–20 minutes printing and signing with each patient. The AI assistant prepares documents ahead of the visit, the patient signs from their phone. Paperwork time -4x. Payback in 3 months.",
+      "clinic_ops": "Patients forget appointments — no-show rates hit 30% and doctors sit idle. The AI assistant sends WhatsApp reminders 24 hours and 1 hour ahead, offers rescheduling, and fills freed slots from the waitlist. No-show -40–50%. Payback in 2 months.",
+      "clinic_support": "After a visit patients ask 'can I take this with alcohol?', 'when do I remove the bandage?' — doctors reply between appointments or not at all. The AI assistant answers routine post-visit questions from the medical knowledge base and escalates serious cases to the doctor. Patient loyalty +30%. Payback in 3 months.",
+      "beauty_leads": "In a salon, 50% of bookings come through Instagram DMs and WhatsApp — the stylist is with a client and replies an hour later. The AI assistant books via WhatsApp in 30 seconds, matches stylist and slot, and sends confirmation. Recovers 60% of missed bookings. Payback in 2 months.",
+      "beauty_docs": "Client cards, supply logs, stylist timesheets — the admin keeps them in a notebook or Excel. The AI assistant fills client cards from bookings, tracks supply usage automatically, and calculates stylist payroll at month-end. Saves the admin 20–30 hours. Payback in 3 months.",
+      "beauty_ops": "Clients visit every 2 months — they forget the next appointment and drift to competitors. The AI assistant nudges them in WhatsApp ('time for a trim'), suggests a slot, and books it. Win-back rate 25–35% on dormant clients. Payback in 2–3 months.",
+      "beauty_support": "'How much for coloring?', 'can I get extensions with my hair type?', 'is there parking?' — the admin answers the same questions 30 times a day. The AI assistant handles 80% from the salon's knowledge base and routes complex ones to a stylist. Frees the admin for in-salon clients. Payback in 2 months.",
+      "legal_leads": "A law firm lead waits half a day for a reply — and ends up with a competitor. The AI assistant takes the inquiry in chat, clarifies the case and urgency, and books a paid consultation with the right lawyer. Lead-to-paid-consult conversion +35%. Payback in 3 months.",
+      "legal_docs": "Contract, claim, demand letter, power of attorney — a lawyer spends 2–3 hours assembling each from templates. From a client conversation, the AI assistant drafts the document on your template, fills in the data, and hands it to the lawyer for review. Frees 40–50 hours per month per lawyer. Payback in 2–3 months.",
+      "legal_ops": "Cases tracked in Excel, court deadlines kept in your head — something gets missed and fines follow. The AI assistant keeps cases in one place, reminds you of hearing dates and filing deadlines, and assigns tasks to paralegals. Missed deadlines -80%. Payback in 4 months.",
+      "legal_support": "Clients ask 'how's my case?' every week — the lawyer spends more time answering than working the case. The AI assistant knows the status of every case, replies to clients, and escalates only material updates. Frees 10–15 hours per week per lawyer. Payback in 3 months.",
+      "education_leads": "For an online school, 3–5 of every 100 interested visitors actually buy — no one follows up with the rest. The AI assistant messages on WhatsApp within 5 minutes, handles objections on program and price, and books a free trial lesson. Sign-up conversion +30–40%. Payback in 2–3 months.",
+      "education_docs": "Student contracts, completion certificates, installment agreements — the admin and accountant drown in paperwork. The AI assistant prepares the contract and payment docs from the course sign-up and sends them to the parent to sign. Onboarding paperwork drops from 2 days to 30 minutes. Payback in 3 months.",
+      "education_ops": "A student skips a lesson — the coordinator finds out 2 days later, by which point motivation is gone. The AI assistant tracks attendance and homework deadlines, messages student and parent when something's missed, and books a catch-up. Course drop-off -25%. Payback in 4 months.",
+      "education_support": "'When's the next lesson?', 'where do I submit homework?', 'can I pay in installments?' — the coordinator answers the same things daily. The AI assistant resolves 80% of routine questions and routes complex ones to a human. Frees coordinators for students who actually need them. Payback in 2 months.",
+      "logistics_leads": "In logistics, a client asks 'quote me Dubai to Almaty, 200 kg' — the manager spends half a day, the client goes elsewhere. The AI assistant gathers cargo details in chat, returns a tariff-based estimate, and books a call for the final offer. Conversion +35%. Payback in 3 months.",
+      "logistics_docs": "Bill of lading, invoice, CMR, customs declaration — your docs team drowns and cargo sits at customs. The AI assistant assembles the shipment package, cross-checks data, and prepares customs paperwork. Shipment processing time -50%. Payback in 3–4 months.",
+      "logistics_ops": "A truck leaves — the client calls every 2 hours asking 'where's my cargo?'. The dispatcher answers instead of dispatching. The AI assistant sees GPS position and sends the client automatic updates with ETA. Cuts dispatcher calls 70%. Payback in 3 months.",
+      "logistics_support": "Claims about damage, delays, paperwork — a manager spends hours per case. The AI assistant pulls shipment data (tracking, photos, signatures), drafts a client response, and escalates only disputed cases. Cuts routine claims handling 60%. Payback in 4 months.",
+      "construction_leads": "A renovation prospect calls 'how much for a 2-bedroom?' — the manager takes a note, shows up a week later, by which point the neighboring crew got the job. The AI assistant gathers the basics (size, condition, materials), gives a price range, and books a site visit in the next available slot. Inquiry-to-visit conversion +40%. Payback in 3 months.",
+      "construction_docs": "Estimate, contractor agreement, hidden-works act, progress reports — the foreman cobbles them together in the evening, losing 10 hours a week. The AI assistant builds the estimate and contract from project parameters, prepares stage-completion acts, and sends them for signing. Frees 40+ hours per month per foreman. Payback in 2–3 months.",
+      "construction_ops": "Tiles run out on site — you find out when the worker stops. Each day of idle crew costs serious money. The AI assistant tracks material usage from on-site photos and triggers procurement for tomorrow's needs. Crew downtime -50%. Payback in 3 months.",
+      "construction_support": "A client asks 'when will the kitchen be done?' — the foreman is on site and replies in the evening, trust erodes. The AI assistant reads stage status from the schedule, replies to the client with on-site photos, and escalates only real problems. Repeat business +25%. Payback in 4 months.",
+      "hr_leads": "An HR agency client says 'we need a senior dev' — the manager takes a day, the best candidates are already at competitors. The AI assistant takes the request, clarifies stack and conditions, and hands the recruiter a finished brief. Request-to-response time drops from 1 day to 1 hour. Payback in 3 months.",
+      "hr_docs": "Client contract, NDA, offer letter, candidate agreement — the recruiter spends half a day assembling them. The AI assistant builds the package per role and candidate, then sends for signature via DocuSign. Frees 20–30 hours per month per recruiter. Payback in 2–3 months.",
+      "hr_ops": "100 applicants for one role — the recruiter reviews 30, the rest go cold, and the best may be among them. The AI assistant screens resumes, filters out clear non-fits, runs a chat-based initial interview, and hands the recruiter the top 10. Time-to-hire -50%. Payback in 3 months.",
+      "hr_support": "Candidates ask 'when's the call?', 'did I get it?', 'when's the offer?' — the recruiter replies in the evening and the candidate walks. The AI assistant knows every candidate's status and replies on WhatsApp/Telegram instantly. Candidate drop-off across the funnel -20%. Payback in 3 months.",
+      "auto_leads": "A customer asks 'how much for a service on a 2019 Camry?' — the manager replies 2 hours later, the customer is already booked at the shop across the street. The AI assistant takes the request in WhatsApp, prices it from your sheet, and books an open slot. Inquiry-to-booking +45%. Payback in 2–3 months.",
+      "auto_docs": "Work order, intake form, warranty card — the service advisor fills them by hand, 20 minutes per car. The AI assistant prepares the work order from the booking and client history, the advisor just reviews. Intake time -3x. Payback in 3 months.",
+      "auto_ops": "A customer no-shows the appointment — the mechanic sits idle, the slot is lost. The AI assistant reminds in WhatsApp 24 hours and 2 hours ahead, offers rescheduling, and fills the slot from the waitlist. No-show -50%. Payback in 2 months.",
+      "auto_support": "Three months after service, the customer is due again — no one reminds them, they go to a chain shop. The AI assistant messages 'time for an oil change' based on mileage and history and books the slot. Win-back rate 30–40% on dormant customers. Payback in 3 months.",
+      "other_leads": "If your niche isn't listed — the lead leak is the same for most: a customer messages in the evening or on a weekend, gets no reply until morning, and walks. The AI assistant replies on WhatsApp/Telegram/Instagram in 30 seconds, 24/7, qualifies, and books the next step. Conversion +30–50%. Payback in 2–3 months.",
+      "other_docs": "In any business, paperwork is hours of manual work that machines handle easily. The AI assistant builds your contract/invoice/act from a template using CRM or chat data, then sends for signature. Frees 20–40 hours per month for whoever was handling it. Payback in 2–3 months.",
+      "other_ops": "If you can't pinpoint where operations leak — it's almost always repetition: identical tasks, data shuffled between tools, manual follow-up. The AI assistant takes that routine off your plate: tracks statuses, sends reminders, assigns tasks. Frees 15–25 hours per week across the team. Payback in 3 months.",
+      "other_support": "Support eats into time of people who should be doing your core work. The AI assistant handles 70–80% of routine questions from your knowledge base and escalates only the complex ones. Cuts load and brings response times from hours to seconds. Payback in 2–3 months."
+    },
+    "fab": {
+      "label": "AI demo · 60 sec",
+      "tooltip": "60 seconds to see what you can automate"
+    }
+  },
+  "explainer": {
+    "eyebrow": "In short",
+    "title": "What an AI employee actually is",
+    "lead": "Not a \"neural net for pictures,\" not a \"Telegram bot for $10/month.\" An employee in the literal sense: works to your playbook, remembers context, reports back. Just doesn't sleep and doesn't ask for a paycheck.",
+    "cards": [
+      {
+        "tone": "what",
+        "kicker": "What it is",
+        "title": "A program-employee that follows your rules",
+        "body": "Understands what's asked in plain language. Asks follow-ups, checks the CRM, looks up stock, escalates to a human when the case isn't standard."
+      },
+      {
+        "tone": "can",
+        "kicker": "What it does",
+        "items": [
+          "Replies to customers at 10pm like a sales manager",
+          "Fills the CRM while you sleep",
+          "Builds a report in a minute instead of a day",
+          "Tracks deadlines and deals slipping through cracks"
+        ]
+      },
+      {
+        "tone": "cant",
+        "kicker": "What it doesn't do",
+        "items": [
+          "Make calls with no rule attached",
+          "Replace a lawyer on a $1M deal",
+          "Run without your oversight for the first 2 weeks",
+          "Guarantee 0% errors — we catch them with guardrails"
+        ]
+      }
+    ]
   },
   "pain": {
     "eyebrow": "Pains",
@@ -180,7 +365,9 @@
         "body": "More clients — more managers. More managers — more chaos: hiring, training, churn. Revenue goes up, you burn out."
       }
     ],
-    "answer": "We'll look at your processes. We'll tell you straight: what to automate now, what later, what not to touch at all. No upsell."
+    "answer": "We'll look at your processes. We'll tell you straight: what to automate now, what later, what not to touch at all. No upsell.",
+    "ctaPrimary": "Try the 60-sec demo",
+    "ctaSecondary": "Book the audit"
   },
   "approach": {
     "eyebrow": "Approach",
@@ -203,17 +390,17 @@
         "body": "We don't talk you into automating for the invoice. Sometimes the right answer is \"leave it to the humans.\" We'll say it honestly and explain why."
       }
     ],
-    "bridge": "Unique doesn't mean «from scratch every time». We have patterns — they adapt, they don't get stamped out. So below isn't a service catalog — it's the areas where we already know how to do the ROI math.",
+    "bridge": "To have a reference point — first, a look at how the leaders already use this. Then back to the six areas where our patterns pay back.",
     "tagline": "Unique problem → unique solution"
   },
   "services": {
     "eyebrow": "What we do",
     "title": "Six areas where the patterns are already there",
-    "lead": "This isn't a service catalog. It's six areas where we have working solutions and a sense of how they pay back. The exact set, stack and logic — we tailor to your business.",
+    "lead": "Six areas with proven solutions and clear payback math. Stack, logic and scenarios — rebuilt around your team.",
     "framing": "What we see most often in these niches",
     "selectorTitle": "Which area are you in?",
     "selectorHint": "We'll show the patterns we've already shipped — and where they paid back first",
-    "individualNote": "The exact set and stack are tailored to your processes. These aren't packages — they're starting points for the conversation.",
+    "individualNote": "These are starting points. The actual set we'll shape around your processes on the audit.",
     "niches": [
       {
         "id": "horeca",
@@ -228,9 +415,9 @@
       {
         "id": "ecom",
         "label": "E-commerce · shop",
-        "summary": "Listings, support and inventory running themselves 24/7. One person handles a catalog that used to need a team.",
+        "summary": "AI shopping assistant + auto-catalog + synced inventory. One person handles a catalog that used to need a team.",
         "items": [
-          "AI consultant on site: helps pick the product and closes the sale",
+          "AI shopping assistant on site: helps pick the product and closes the sale",
           "Auto-generated product cards, descriptions and SEO across the catalog",
           "Sync inventory ↔ marketplaces ↔ CRM in real time"
         ]
@@ -238,9 +425,9 @@
       {
         "id": "agency",
         "label": "Agency · services",
-        "summary": "Lead gen, qualification and client onboarding on autopilot. Account managers only deal with warm leads.",
+        "summary": "AI intake handles incoming, proposals and onboarding. Account managers only deal with warm leads.",
         "items": [
-          "AI qualifies inbound: the bot asks about budget and scope on its own",
+          "AI intake assistant qualifies inbound: asks about budget and scope on its own",
           "Auto-generated proposals and contracts from CRM templates",
           "Client reports: metrics, screenshots, status — weekly, hands-off"
         ]
@@ -258,9 +445,9 @@
       {
         "id": "realestate",
         "label": "Real estate",
-        "summary": "Leads, viewings and deals — faster than the competing agent. AI replies to a listing in 30 seconds.",
+        "summary": "AI listing assistant replies in 30 seconds — before the competing agent even picks up the phone.",
         "items": [
-          "AI bot on listings: qualifies leads and books a viewing in 30 sec",
+          "AI listing assistant: qualifies leads and books a viewing in 30 sec",
           "Auto-matching properties to client requests across all sources",
           "Pipeline reminders and follow-ups: nothing falls through the cracks"
         ]
@@ -268,16 +455,16 @@
       {
         "id": "b2b",
         "label": "B2B · services · SaaS",
-        "summary": "Funnel, billing, support and onboarding on a conveyor. Revenue grows without payroll growing.",
+        "summary": "AI sales rep + single client record. Revenue grows, headcount doesn't.",
         "items": [
-          "AI sales agent: qualifies, books demos, drafts proposals",
+          "AI sales rep: qualifies, books demos, drafts proposals",
           "Billing + CRM + support stitched into a single client record",
           "Support conversation analysis: what breaks, what's missing in the product"
         ]
       }
     ],
     "ctaHint": "Don't see your niche? Describe the task — we'll figure it out.",
-    "bottomCta": "Not sure if it fits — let's spend 30 minutes on it"
+    "bottomCta": "Get the ROI math · 30 minutes"
   },
   "case": {
     "eyebrow": "Case",
@@ -311,9 +498,15 @@
     "steps": [
       {
         "title": "Discovery & audit",
-        "duration": "30-min call + 1–3 days of analysis",
-        "output": "Process map and 2–3 spots with ROI math",
-        "body": "We get on a call and dig into your processes — no templates, no canned answers. You walk away knowing where automation pays off in your case, and where it doesn't."
+        "duration": "30-min call + 48 hours of analysis",
+        "output": "Process map, ROI math, PDF in your hands",
+        "deliverables": [
+          "Map of 5–7 of your processes, prioritized by payback",
+          "ROI math: hours × loaded rate, in EUR or AED",
+          "List of what NOT to automate (and why)",
+          "PDF is yours to keep — even if we don't move forward"
+        ],
+        "body": "We get on a call and dig into your processes — no templates, no canned answers. In 48 hours you have a document you can decide on yourself — with us or without."
       },
       {
         "title": "Prototype on your logic",
@@ -336,10 +529,42 @@
     ],
     "guarantee": "Between stages there's a kill switch. We don't move forward until you've seen the result of the previous one."
   },
+  "guarantees": {
+    "eyebrow": "Guarantees",
+    "title": "What's written into the contract",
+    "lead": "No \"we'll improve efficiency\" — concrete obligations on paper. We deliver what we promise, or we refund.",
+    "items": [
+      {
+        "icon": "receipt",
+        "title": "Payment per stage",
+        "body": "No next stage — no payment. No upfront fee for the full scope."
+      },
+      {
+        "icon": "target",
+        "title": "KPIs in the SLA",
+        "body": "Concrete numbers in the contract: response time, accuracy, uptime. Not \"we'll improve the team\"."
+      },
+      {
+        "icon": "key",
+        "title": "Access from day one",
+        "body": "Logins, docs, repo — yours from day one. Walking away from us is painless by design."
+      },
+      {
+        "icon": "boxes",
+        "title": "Open stack",
+        "body": "n8n, Python, standard APIs — any engineer can pick it up. No proprietary language of ours."
+      }
+    ],
+    "highlight": {
+      "kicker": "The headline guarantee",
+      "title": "Prototype doesn't pay back — we refund the prototype fee",
+      "body": "We fix the payback criterion in the contract upfront — as a number, not a vibe: hours × loaded rate, concrete metrics, a measurement window. After 1–3 weeks of prototyping we compare against real data. Doesn't match — we refund the prototype fee. Anything debatable resolves in the client's favor."
+    }
+  },
   "team": {
     "eyebrow": "Team",
     "title": "Two of us — both build",
-    "body": "We moved to Dubai to deliver real value to local businesses: we ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release.",
+    "body": "We moved to Dubai to deliver real value to local businesses: we ship what pays back and talk you out of what doesn't. No middlemen — the person on the call is the one who writes the code. Every project is run personally, from first call to release. On larger engagements we bring in trusted partners — but the interface stays the same: you talk to the people accountable for the result.",
     "geoTitle": "Based in",
     "geoCore": "Dubai · Russia",
     "geoExtra": "Working internationally",
@@ -367,12 +592,20 @@
         "a": "Most failures come from \"the box\", not from the tech. We don't go into a big rollout without a prototype. 1–3 weeks, on your data, on your scenarios — if there's no impact, we don't move forward. You pay per stage, with a kill switch between them."
       },
       {
-        "q": "What if the AI bot tells a customer something dumb or hallucinated — who's on the hook?",
+        "q": "We already have a bot in ManyChat / Intercom / WhatsApp — what's different here?",
+        "a": "Off-the-shelf bots run on \"if X — then Y\" scripts. They're fast and cheap as long as customer requests stay inside the script. We build an AI employee that handles requests outside the script, remembers conversation context, and plugs straight into your CRM and ops. If your current bot closes 100% of cases — you don't need us. If it's 30–50% — let's see what catches the rest."
+      },
+      {
+        "q": "What if the AI employee tells a customer something dumb or hallucinated — who's on the hook?",
         "a": "The cost of an error decides the architecture. For customer-facing flows — RAG over your data, explicit guardrails, escalation to a human. Where hallucination is expensive, we don't use AI at all — we go deterministic."
       },
       {
         "q": "What about privacy? We have NDA, GDPR, internal policies.",
         "a": "By default we deploy inside your perimeter — data doesn't leave. We sign NDA. AI models can run locally or via private endpoints (Azure OpenAI, AWS Bedrock, on-prem)."
+      },
+      {
+        "q": "What if OpenAI access is cut or sanctions hit our region?",
+        "a": "We're not locked into one model. From day one we design for a provider swap: we can switch to Azure OpenAI, Anthropic, AWS Bedrock, or self-host open models (Llama, Qwen, Mistral) on your own servers. A swap typically takes a week. Business logic and integrations stay — only the \"brain\" changes."
       },
       {
         "q": "What if you disappear after the launch? We'll be left with a broken system.",
@@ -387,22 +620,38 @@
         "a": "After the 30-minute audit — a range in EUR or AED for a defined scope, plus an ROI calculation (hours × loaded rate). Payment per stage. If the math doesn't add up, we don't sign."
       },
       {
+        "q": "Can we start with a single process without rebuilding the whole business?",
+        "a": "That's the only way we work. The audit surfaces 5–7 spots — we start with one, either the most painful or the highest-ROI. The rest comes later, if the first one delivers. No \"you have to automate everything at once or it won't work\" — that's the pitch of people selling a box."
+      },
+      {
         "q": "Does this fit our size or industry?",
         "a": "We work with SMB plus public sector. For micro (under 5 people) we often talk you out of it — the math doesn't work. If your case isn't ours — we'll say so and point you at someone who'll do it better."
+      },
+      {
+        "q": "Where are you based — and do you work on-site or remotely?",
+        "a": "Home base is Dubai. We meet in person in Dubai Marina or at your office around the city; for remote clients — Zoom. Audit, prototype and support run from Dubai; larger rollouts with your team run hybrid."
+      },
+      {
+        "q": "What languages do you work in?",
+        "a": "Russian and English are primary. The AI employees we build can reply to your customers in any language (including Arabic). Contracts and SLAs — bilingual on request."
+      },
+      {
+        "q": "Can we invoice through a UAE entity in dirhams?",
+        "a": "Yes. Contract and invoice through our UAE entity, payment in AED, EUR or USD. For CIS clients we can arrange an alternative scheme if needed. Closing documents are VAT-compliant."
       }
     ],
     "contact": "Question not on the list — message us on Telegram @Magicworkpro, no form needed."
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Tell us about the task",
-    "subtitle": "Fill out the form or message us directly — we'll get back at a time that works for you. We'll look at what you have and propose a fit.",
+    "title": "Leave a contact — we'll get back within 24 hours",
+    "subtitle": "Just your name and Telegram/phone is enough — the rest we'll cover on a call. Or message us directly on Telegram — that's the fastest path.",
     "fields": {
       "name": "Name",
-      "business": "Company / project",
-      "pain": "What you'd like to automate",
+      "business": "Company (optional)",
+      "pain": "What you'd like to automate (optional)",
       "contact": "Telegram, email or phone",
-      "time": "Best time to reach you"
+      "time": "Best time to reach you (optional)"
     },
     "submit": "Send request",
     "submitting": "Sending…",

@@ -11,6 +11,7 @@ type Step = {
   body: string;
   duration: string;
   output: string;
+  deliverables?: string[];
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -61,11 +62,27 @@ export function Process() {
               </span>
             </div>
             <p className="text-[13px] leading-relaxed text-text-muted">{step.body}</p>
-            <div className="mt-auto flex flex-col gap-1 border-t border-border pt-4">
+            <div className="mt-auto flex flex-col gap-2 border-t border-border pt-4">
               <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">
                 →
               </span>
               <p className="text-[12.5px] font-medium leading-snug text-text">{step.output}</p>
+              {step.deliverables && step.deliverables.length > 0 && (
+                <ul className="mt-1 flex flex-col gap-1.5">
+                  {step.deliverables.map((d, k) => (
+                    <li
+                      key={k}
+                      className="flex items-start gap-2 text-[11.5px] leading-snug text-text-muted"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-accent"
+                      />
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </motion.li>
         ))}

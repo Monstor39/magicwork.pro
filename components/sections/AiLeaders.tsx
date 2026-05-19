@@ -173,7 +173,7 @@ export function AiLeaders() {
             <p className="text-[15px] leading-relaxed text-text-muted">{t("closing.body")}</p>
           </div>
           <a
-            href="#contact"
+            href="#services"
             className="group inline-flex h-[52px] shrink-0 items-center justify-center gap-2 rounded-md bg-accent px-7 text-[15px] font-medium text-white elev-cta transition-all hover:bg-accent-light"
           >
             {t("closing.cta")}

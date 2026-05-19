@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { YandexMetrika } from "@/components/analytics/YandexMetrika";
 import "../globals.css";
 
 const inter = Inter({
@@ -88,6 +89,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
         </NextIntlClientProvider>
+        <YandexMetrika />
       </body>
     </html>
   );

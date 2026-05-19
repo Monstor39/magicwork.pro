@@ -6,6 +6,7 @@ import { ArrowRight, Check, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { trackGoal } from "@/components/analytics/YandexMetrika";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -89,6 +90,7 @@ export function Contact() {
       });
       clearTimeout(timeoutId);
       if (!res.ok) throw new Error("submit failed");
+      trackGoal("form_lead", { locale });
       setStatus("success");
       form.reset();
     } catch {
